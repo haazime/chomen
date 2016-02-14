@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require semantic-ui
 //= require_tree .
+
+$(document).on('ready', function() {
+  $('.storable').focusout(function() {
+    var f = $(this).closest('form');
+    $.rails.handleRemote(f);
+  });
+});
