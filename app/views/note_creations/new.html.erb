@@ -1,9 +1,0 @@
-<h1 class="ui header unobtrusive">Keep it simple, stupid!</h1>
-<div class="ui form">
-  <%= form_for @form, remote: true do |f| %>
-    <div class="ui field">
-      <%= f.text_area :content, rows: 20, class: 'storable' %>
-    </div>
-  <% end -%>
-</div>
-<div id="state"></div>

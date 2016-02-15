@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :note_creations, only: [:new, :create]
+  resources :note_savings, only: [:new, :create]
 
-  root 'note_creations#new'
+  root 'note_savings#new'
 end
