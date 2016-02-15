@@ -16,9 +16,22 @@
 //= require semantic-ui
 //= require_tree .
 
-$(document).on('ready', function() {
+var storable = function() {
   $('.storable').focusout(function() {
     var f = $(this).closest('form');
     $.rails.handleRemote(f);
   });
+}
+
+var menu = function() {
+  $('#notes').on('click', function() {
+    $('.ui.sidebar')
+      .sidebar('setting', 'transition', 'overlay')
+      .sidebar('toggle');
+  });
+}
+
+$(document).on('page:change', function() {
+  menu();
+  storable();
 });
