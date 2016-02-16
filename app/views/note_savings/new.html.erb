@@ -1,0 +1,14 @@
+<div class="ui sidebar vertical menu">
+  <%= render partial: 'list', locals: { titles: @titles } %>
+</div>
+<div class="pusher">
+  <div class="ui main container">
+    <div class="ui left labeled button tiny" tabindex="0" style="margin-bottom: 1rem;">
+      <a class="ui basic right pointing label" id="notes"><%= @titles.size %></a>
+      <div class="ui icon button tiny">
+        <i class="plus icon"></i>
+      </div>
+    </div>
+    <%= render partial: 'form', locals: { form: @form } %>
+  </div>
+</div>
