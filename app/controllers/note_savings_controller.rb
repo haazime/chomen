@@ -2,7 +2,7 @@ class NoteSavingsController < ApplicationController
 
   def new
     @form = NoteSaving.new
-    @titles = %w(alpha brabo charlie delta echo foxtrot golf hotel)
+    @titles = (1..80).map { |n| "Title#{n}" }
   end
 
   def create
