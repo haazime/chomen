@@ -1,4 +1,4 @@
-class NoteSavingsController < ApplicationController
+class NotesController < ApplicationController
 
   def new
     @form = NoteSaving.new
