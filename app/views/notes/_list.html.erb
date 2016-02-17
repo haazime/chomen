@@ -1,0 +1,11 @@
+<div class="ui list">
+  <% Array(notes).each do |n| -%>
+    <a class="item" href="<%= edit_note_url(n) %>">
+      <i class="large right triangle icon"></i>
+      <div class="content">
+        <div class="header"><%= n.id %></div>
+        <div class="description"><%= l(n.updated_at, format: :default) %></div>
+      </div>
+    </a>
+  <% end -%>
+</div>
