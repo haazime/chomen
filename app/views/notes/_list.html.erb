@@ -1,10 +1,10 @@
 <div class="ui list">
-  <% titles.each do |title| -%>
-    <a class="item" href="/">
+  <% Array(notes).each do |n| -%>
+    <a class="item" href="<%= edit_note_url(n) %>">
       <i class="large right triangle icon"></i>
       <div class="content">
-        <div class="header"><%= title %></div>
-        <div class="description">2016/02/16 12:34</div>
+        <div class="header"><%= n.id %></div>
+        <div class="description"><%= l(n.updated_at, format: :default) %></div>
       </div>
     </a>
   <% end -%>

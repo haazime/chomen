@@ -16,6 +16,23 @@
 //= require semantic-ui
 //= require_tree .
 
+var toggleNoteList = function() {
+  $('.ui.sidebar')
+    .sidebar('setting', 'transition', 'overlay')
+    .sidebar('toggle');
+}
+
+var menuHandler = function() {
+  $('a[data-notes-opener]').on('click', function() {
+    toggleNoteList();
+  });
+}
+
+$(document).on('page:change', function() {
+  menuHandler();
+});
+
+/*
 var storable = function() {
   $('.storable').focusout(function() {
     var f = $(this).closest('form');
@@ -23,15 +40,21 @@ var storable = function() {
   });
 }
 
-var menu = function() {
-  $('#notes').on('click', function() {
-    $('.ui.sidebar')
-      .sidebar('setting', 'transition', 'overlay')
-      .sidebar('toggle');
-  });
-}
-
 $(document).on('page:change', function() {
   menu();
   storable();
 });
+
+var updateNoteForm = function(contents) {
+
+  $('#note-form').html(contents.newNoteForm);
+
+  $(contents.newStateLine)
+    .appendTo('#state')
+    .fadeIn('slow')
+    .delay(500)
+    .fadeOut('slow', function() {
+      $(this).remove();
+    });
+}
+*/
