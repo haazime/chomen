@@ -18,15 +18,16 @@
 
 Turbolinks.enableProgressBar();
 
-var toggleNoteList = function() {
+var togglePageList = function() {
   $('.ui.sidebar')
     .sidebar('setting', 'transition', 'overlay')
     .sidebar('toggle');
 }
 
 var menuHandler = function() {
-  $('a[data-notes-opener]').on('click', function() {
-    toggleNoteList();
+  $('a[data-pages-opener]').on('click', function(e) {
+    e.preventDefault();
+    togglePageList();
   });
 }
 
