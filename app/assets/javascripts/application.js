@@ -16,6 +16,8 @@
 //= require semantic-ui
 //= require_tree .
 
+Turbolinks.enableProgressBar();
+
 var toggleNoteList = function() {
   $('.ui.sidebar')
     .sidebar('setting', 'transition', 'overlay')
