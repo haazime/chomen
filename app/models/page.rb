@@ -6,4 +6,8 @@ class Page < ActiveRecord::Base
   before_create do
     self.gpid = SecureRandom.uuid
   end
+
+  def label
+    @label ||= content.split(/\n\r|\r|\n/).first
+  end
 end
