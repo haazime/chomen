@@ -1,0 +1,11 @@
+<div class="ui list">
+  <% Array(pages).each do |p| -%>
+    <a class="item" href="<%= edit_page_url(gpid: p.gpid) %>">
+      <i class="large right triangle icon"></i>
+      <div class="content">
+        <div class="header"><%= p.content %></div>
+        <div class="description"><%= l(p.updated_at, format: :default) %></div>
+      </div>
+    </a>
+  <% end -%>
+</div>
