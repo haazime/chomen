@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def authorize!
-      return unless Rails.env == :production
+      return unless Rails.env == 'production'
       unless authenticate_with_http_basic { |u, p| authenticate(u, p) }
         request_http_basic_authentication
       end
