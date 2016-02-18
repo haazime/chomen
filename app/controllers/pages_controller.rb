@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :authorize!
   before_action :set_pages
   before_action :set_page, only: [:edit, :update]
 
