@@ -24,7 +24,7 @@ var togglePageList = function() {
     .sidebar('toggle');
 }
 
-var menuHandler = function() {
+var pageListHandler = function() {
   $('a[data-pages-opener]').on('click', function(e) {
     e.preventDefault();
     togglePageList();
@@ -32,7 +32,7 @@ var menuHandler = function() {
 }
 
 $(document).on('page:change', function() {
-  menuHandler();
+  pageListHandler();
 });
 
 /*
