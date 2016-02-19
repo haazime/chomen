@@ -18,46 +18,7 @@
 
 Turbolinks.enableProgressBar();
 
-var togglePageList = function() {
-  $('.ui.sidebar')
-    .sidebar('setting', 'transition', 'overlay')
-    .sidebar('toggle');
-}
-
-var pageListHandler = function() {
-  $('a[data-pages-opener]').on('click', function(e) {
-    e.preventDefault();
-    togglePageList();
-  });
-}
-
 $(document).on('page:change', function() {
   pageListHandler();
+  autoSaveHandler();
 });
-
-/*
-var storable = function() {
-  $('.storable').focusout(function() {
-    var f = $(this).closest('form');
-    $.rails.handleRemote(f);
-  });
-}
-
-$(document).on('page:change', function() {
-  menu();
-  storable();
-});
-
-var updateNoteForm = function(contents) {
-
-  $('#note-form').html(contents.newNoteForm);
-
-  $(contents.newStateLine)
-    .appendTo('#state')
-    .fadeIn('slow')
-    .delay(500)
-    .fadeOut('slow', function() {
-      $(this).remove();
-    });
-}
-*/

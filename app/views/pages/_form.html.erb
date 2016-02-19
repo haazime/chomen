@@ -1,8 +1,7 @@
 <% form_action = page.persisted? ? page_url(gpid: page.gpid) : pages_url %>
 <% form_method = page.persisted? ? :put : :post %>
-<%= form_for page, url: form_action, method: form_method, html: { class: 'ui form' } do |f| %>
+<%= form_for page, url: form_action, method: form_method, remote: true, html: { class: 'ui form' } do |f| %>
   <div class="ui field">
-    <%= f.text_area :content, rows: 22, class: 'content' %>
+    <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true } %>
   </div>
-  <%= f.submit 'Save', class: 'ui button' %>
 <% end -%>

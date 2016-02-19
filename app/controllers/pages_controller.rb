@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     if @page.save
-      redirect_to edit_page_url(gpid: @page.gpid)
+      #redirect_to edit_page_url(gpid: @page.gpid)
+      render
     else
       render :page
     end
@@ -23,7 +24,7 @@ class PagesController < ApplicationController
 
   def update
     if @page.update(page_params)
-      redirect_to edit_page_url(gpid: @page.gpid)
+      render
     else
       render :page
     end
