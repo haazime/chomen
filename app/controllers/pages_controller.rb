@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:edit, :update]
 
   def new
-    @page = Page.new
+    @form = NewPageForm.new
     render :page
   end
 
@@ -15,7 +15,6 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     if @page.save
-      #redirect_to edit_page_url(gpid: @page.gpid)
       render
     else
       render :page

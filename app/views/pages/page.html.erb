@@ -1,13 +1,5 @@
-<div id="page-list" class="ui sidebar vertical menu">
-  <%= render partial: 'list', locals: { pages: @pages } %>
-</div>
-<div class="pusher">
-  <%= render partial: 'layouts/menu', locals: { page: @page, page_size: @pages.size } %>
-  <div class="ui container">
-    <div class="one column grid">
-      <div id="chunk" class="chunk-area column">
-        <%= render partial: 'form', locals: { page: @page } %>
-      </div>
-    </div>
+<div class="one column grid">
+  <div id="chunk" class="chunk-area column">
+    <%= render partial: 'form', locals: { form: @form } %>
   </div>
 </div>
