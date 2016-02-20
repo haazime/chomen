@@ -15,3 +15,15 @@ textarea {
 #state {
   margin-top: 1rem;
 }
+
+.brand {
+  font-size: 1.1rem;
+  $color: grey;
+
+  a {
+    color: $color;
+    &:hover, &:active, &:focus {
+      color: lighten($color, 15%);
+    }
+  }
+}
