@@ -1,0 +1,20 @@
+<div class="ui top fixed menu">
+  <div class="item" id="page-summary">
+    <%= link_to '#', data: { pages_opener: true }, class: 'ui button' do %>
+      <i class="file outline icon"></i><%= page_size %>
+    <% end -%>
+  </div>
+  <div class="item">
+    <%= link_to new_page_url, class: 'ui button' do %>
+      <i class="write icon"></i>New
+    <% end -%>
+  </div>
+  <div class="item">
+    <div class="ui icon buttons">
+      <button class="ui button"><i class="arrow circle down outline icon"></i></button>
+      <button class="ui button"><i class="arrow circle right outline icon"></i></button>
+      <button class="ui button"><i class="arrow circle up outline icon"></i></button>
+      <button class="ui button"><i class="arrow circle left outline icon"></i></button>
+    </div>
+  </div>
+</div>

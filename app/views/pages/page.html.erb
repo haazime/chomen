@@ -2,15 +2,8 @@
   <%= render partial: 'list', locals: { pages: @pages } %>
 </div>
 <div class="pusher">
+  <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
   <div class="ui container">
-    <div class="row" style="margin-bottom: 1rem;">
-      <span id="page-summary">
-        <%= render partial: 'summary', locals: { size: @pages.size } %>
-      </span>
-      <%= link_to new_page_url, class: 'ui large label' do %>
-        <i class="write icon"></i>New
-      <% end -%>
-    </div>
     <div id="chunk" class="ui form">
       <%= render partial: 'form', locals: { page: @page } %>
     </div>
