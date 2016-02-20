@@ -1,4 +1,4 @@
-$('#section').html("<%=j render(partial: 'form', locals: { page: @page }) %>");
+$('#chunk').html("<%=j render(partial: 'form', locals: { page: @page }) %>");
 $('#page-list').html("<%=j render(partial: 'list', locals: { pages: @pages }) %>");
 $('#page-summary').html("<%=j render(partial: 'summary', locals: { size: @pages.size }) %>");
 showState();
