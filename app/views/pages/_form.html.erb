@@ -7,10 +7,18 @@
 <% end -%>
 <div class="ui floated right" style="margin-top: 0.5rem;">
   <div class="ui mini icon basic buttons">
-    <button class="ui button"><i class="arrow down icon"></i></button>
-    <button class="ui button"><i class="arrow right icon"></i></button>
-    <button class="ui button"><i class="arrow up icon"></i></button>
-    <button class="ui button"><i class="arrow left icon"></i></button>
+    <%= link_to '#', remote: true, class: 'ui button' do %>
+      <i class="arrow down icon"></i>
+    <% end -%>
+    <%= link_to '#', remote: true, class: 'ui button' do %>
+      <i class="arrow right icon"></i>
+    <% end -%>
+    <%= link_to '#', remote: true, class: 'ui button' do %>
+      <i class="arrow up icon"></i>
+    <% end -%>
+    <%= link_to '#', remote: true, class: 'ui button' do %>
+      <i class="arrow left icon"></i>
+    <% end -%>
   </div>
   <div id="state" class="ui label" style="display: none;"><i class="cloud upload icon"></i> Saved.</div>
 </div>
