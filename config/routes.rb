@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get   '/pages/:gpid/chunks/new', to: 'chunks#new', as: :new_chunk
 
   get 'sandbox', to: 'sandbox#index'
+
   root 'pages#new'
 end
