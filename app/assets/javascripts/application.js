@@ -21,4 +21,5 @@ Turbolinks.enableProgressBar();
 $(document).on('page:change', function() {
   pageListHandler();
   autoSaveHandler();
+  chunkAddHandler();
 });

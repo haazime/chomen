@@ -3,21 +3,11 @@
     <h1 class="brand"><%= link_to 'Chomen', root_url %></h1>
   </div>
   <div class="item" id="page-summary">
-    <%= link_to '#', data: { pages_opener: true }, class: 'ui button' do %>
-      <i class="file outline icon"></i><%= page_size %>
-    <% end -%>
+    <%= render partial: 'pages/summary', locals: { page_size: page_size } %>
   </div>
   <div class="item">
     <%= link_to new_page_url, class: 'ui button' do %>
       <i class="write icon"></i>New
     <% end -%>
-  </div>
-  <div class="item">
-    <div class="ui icon buttons">
-      <button class="ui button"><i class="arrow down icon"></i></button>
-      <button class="ui button"><i class="arrow right icon"></i></button>
-      <button class="ui button"><i class="arrow up icon"></i></button>
-      <button class="ui button"><i class="arrow left icon"></i></button>
-    </div>
   </div>
 </div>

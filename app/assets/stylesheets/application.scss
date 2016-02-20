@@ -5,7 +5,7 @@ html.turbolinks-progress-bar::before {
 }
 
 .container {
-  margin-top: calc(47px * 2);
+  margin-top: calc(47px + 1rem);
 }
 
 textarea {
@@ -23,7 +23,7 @@ textarea {
   a {
     color: $color;
     &:hover, &:active, &:focus {
-      color: lighten($color, 15%);
+      color: darken($color, 20%);
     }
   }
 }

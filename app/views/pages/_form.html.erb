@@ -1,3 +1,9 @@
+  <div class="ui mini icon basic buttons" style="margin-bottom: 1rem;">
+    <button class="ui button"><i class="arrow down icon"></i></button>
+    <button class="ui button"><i class="arrow right icon"></i></button>
+    <button class="ui button"><i class="arrow up icon"></i></button>
+    <button class="ui button"><i class="arrow left icon"></i></button>
+  </div>
 <% form_action = page.persisted? ? page_url(gpid: page.gpid) : pages_url %>
 <% form_method = page.persisted? ? :put : :post %>
 <%= form_for page, url: form_action, method: form_method, remote: true, html: { class: 'ui form' } do |f| %>
@@ -5,3 +11,4 @@
     <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true } %>
   </div>
 <% end -%>
+<div id="state"></div>

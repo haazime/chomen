@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get   '/pages/:gpid/edit',  to: 'pages#edit',   as: :edit_page
   put   '/pages/:gpid',       to: 'pages#update', as: :page
 
+  get   '/pages/:gpid/chunks/new', to: 'chunks#new', as: :new_chunk
+
   get 'sandbox', to: 'sandbox#index'
   root 'pages#new'
 end
