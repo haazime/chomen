@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :set_page, only: [:edit, :update]
 
   def new
-    @form = NewPageForm.new
+    @chunk = Page.new.chunks.build
     render :page
   end
 

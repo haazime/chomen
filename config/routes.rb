@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get   '/page_creations/new',  to: 'page_creations#new',     as: :new_page_creation
-  post  '/page_creations',      to: 'page_creations#create',  as: :page_creations
+  get   '/pages/new',   to: 'pages#new',      as: :new_page
+
+  post  '/chunks',      to: 'chunks#create',  as: :chunks
+  put   '/chunks/:id',  to: 'chunks#update',  as: :chunk
+
   get   '/pages/:gpid', to: 'pages#edit',   as: :edit_page
   put   '/pages/:gpid', to: 'pages#update', as: :page
 
@@ -10,5 +13,5 @@ Rails.application.routes.draw do
 
   get 'sandbox', to: 'sandbox#index'
 
-  root 'page_creations#new'
+  root 'pages#new'
 end
