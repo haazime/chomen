@@ -1,4 +1,4 @@
-class PageCreation
+class PageCreationForm
   include ActiveModel::Model
 
   attr_accessor :content

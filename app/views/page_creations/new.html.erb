@@ -1,4 +1,8 @@
 <div id="chunk">
-  <%= render partial: 'chunks/form', locals: { form: @form } %>
+  <%= form_for @form, as: :page_creation, url: page_creations_url, remote: true, html: { class: 'ui form' } do |f| %>
+    <div class="ui field">
+      <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true } %>
+    </div>
+  <% end -%>
 </div>
 <div id="state" class="ui label" style="display: none;"><i class="cloud upload icon"></i>Saved.</div>

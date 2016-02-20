@@ -3,13 +3,13 @@ class PageCreationsController < ApplicationController
   before_action :set_pages
 
   def new
-    @form = PageCreation.new
+    @form = PageCreationForm.new
   end
 
   def create
-    creation = PageCreation.new(params[:page_creation])
+    creation = PageCreationForm.new(params[:page_creation])
     creation.run
-    @form = ChunkEditing.from_chunk(creation.chunk)
+    @form = ChunkEditingForm.from_chunk(creation.chunk)
   end
 
   private
