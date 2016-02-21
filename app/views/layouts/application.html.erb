@@ -11,9 +11,13 @@
     <%= render partial: 'pages/list', locals: { pages: @pages } %>
   </div>
   <div class="pusher">
-    <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
-    <div class="ui main container">
-      <%= yield %>
+    <div class="ui one column grid container">
+      <div class="column">
+        <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
+      </div>
+      <div class="column main">
+        <%= yield %>
+      </div>
     </div>
   </div>
 </body>
