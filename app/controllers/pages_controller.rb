@@ -13,19 +13,7 @@ class PagesController < ApplicationController
     render :page
   end
 
-  def update
-    if @page.update(page_params)
-      render
-    else
-      render :page
-    end
-  end
-
   private
-
-    def page_params
-      params.require(:page).permit(:content)
-    end
 
     def set_pages
       @pages = Page.all

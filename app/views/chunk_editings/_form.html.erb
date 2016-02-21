@@ -1,5 +1,0 @@
-<%= form_for form, as: :chunk_editing, url: chunk_editings_url(form.chunk_id), remote: true, html: { class: 'ui form' } do |f| %>
-  <div class="ui field">
-    <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true } %>
-  </div>
-<% end -%>
