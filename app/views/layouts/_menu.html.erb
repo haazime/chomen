@@ -1,13 +1,14 @@
-<div class="ui top fixed menu">
-  <div class="item">
-    <h1 class="brand"><%= link_to 'Chomen', root_url %></h1>
-  </div>
-  <div class="item">
-    <%= link_to new_page_url, class: 'ui button' do %>
-      <i class="write icon"></i>New
+<div class="ui top fixed icon menu">
+  <div class="ui container">
+    <div class="item">
+      <h1 class="brand"><%= link_to 'Chomen', root_url %></h1>
+    </div>
+    <%= link_to new_page_url, class: 'item' do %>
+      <i class="write icon"></i>
     <% end -%>
-  </div>
-  <div class="item" id="page-summary">
-    <%= render partial: 'pages/summary', locals: { page_size: page_size } %>
+    <%= link_to '#', data: { pages_opener: true }, class: 'item' do %>
+      <i class="file outline icon"></i>
+    <% end -%>
+    <%#= render partial: 'pages/summary', locals: { page_size: page_size } %>
   </div>
 </div>
