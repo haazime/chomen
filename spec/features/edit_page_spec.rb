@@ -16,12 +16,14 @@ describe 'edit page' do
   end
 
   describe 'update content', js: true do
-    it do
+    before do
       fill_in 'chunk[content]', with: 'UPDATED_NOTE'
       edit_form.trigger('submit')
       find('#state')
-      updated_content = edit_form.first('textarea').value
-      expect(updated_content).to eq('UPDATED_NOTE')
     end
+
+    let(:updated_content) { edit_form.first('textarea').value }
+
+    it { expect(updated_content).to eq('UPDATED_NOTE') }
   end
 end
