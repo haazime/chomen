@@ -7,6 +7,11 @@ class ChunksController < ApplicationController
     Page.new_with_chunk(@chunk).save
   end
 
+  def update
+    @chunk = Chunk.find(params[:id])
+    @chunk.update(chunk_params)
+  end
+
   private
 
     def chunk_params
