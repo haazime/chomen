@@ -38,6 +38,7 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'dotenv-rails'
+  gem 'database_rewinder'
 end
 
 group :development do
