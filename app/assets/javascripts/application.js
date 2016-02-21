@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require semantic-ui
+//= require turbolinks
 //= require_tree .
 
 Turbolinks.enableProgressBar();
@@ -21,4 +21,5 @@ Turbolinks.enableProgressBar();
 $(document).on('page:change', function() {
   pageListHandler();
   autoSaveHandler();
+  chunkAddHandler();
 });

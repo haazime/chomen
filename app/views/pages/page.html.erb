@@ -1,19 +1,22 @@
-<div id="page-list" class="ui sidebar vertical menu">
-  <%= render partial: 'list', locals: { pages: @pages } %>
-</div>
-<div class="pusher">
-  <div class="ui main container">
-    <div class="row" style="margin-bottom: 1rem;">
-      <span id="page-summary">
-        <%= render partial: 'summary', locals: { size: @pages.size } %>
-      </span>
-      <%= link_to new_page_url, class: 'ui large label' do %>
-        <i class="write icon"></i>New
+<div class="one column grid">
+  <div id="chunk" class="chunk-area column">
+    <%= render partial: 'chunks/form', locals: { chunk: @chunk } %>
+  </div>
+  <div style="margin-top: 1.0rem;">
+    <span id="state-anchor" class="ui left floated"></span>
+    <div class="ui tiny icon buttons right floated">
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow down icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow right icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow up icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow left icon"></i>
       <% end -%>
     </div>
-    <div id="section" class="ui form">
-      <%= render partial: 'form', locals: { page: @page } %>
-    </div>
-    <div id="state"></div>
   </div>
 </div>

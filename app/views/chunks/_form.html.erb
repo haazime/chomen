@@ -1,0 +1,5 @@
+<%= form_for chunk, remote: true, html: { class: 'ui form' } do |f| %>
+  <div class="ui field">
+    <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true }, autofocus: true %>
+  </div>
+<% end -%>

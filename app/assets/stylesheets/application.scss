@@ -4,18 +4,22 @@ html.turbolinks-progress-bar::before {
   background-color: grey !important;
 }
 
-.unobtrusive {
-  opacity: 0.1;
+.container {
+  margin-top: calc(47px + 2rem);
 }
 
-.main.container {
-  margin-top: 1rem;
-}
-
-textarea.content {
+textarea {
   font-size: 1.2rem !important;
 }
 
-#state {
-  margin-top: 1rem;
+.brand {
+  font-size: 1.1rem;
+  $color: grey;
+
+  a {
+    color: $color;
+    &:hover, &:active, &:focus {
+      color: darken($color, 20%);
+    }
+  }
 }

@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= yield %>
+  <div id="page-list" class="ui sidebar vertical menu">
+    <%= render partial: 'pages/list', locals: { pages: @pages } %>
+  </div>
+  <div class="pusher">
+    <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
+    <div class="ui container">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

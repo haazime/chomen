@@ -1,13 +1,15 @@
 require 'securerandom'
 
 class Page < ActiveRecord::Base
-  validates :content, presence: true
+  has_many :chunks, dependent: :destroy
 
-  before_create do
-    self.gpid = SecureRandom.uuid
+  def self.new_with_chunk(chunk)
+    new(gpid: SecureRandom.uuid).tap do |page|
+      page.chunks << chunk
+    end
   end
 
   def label
-    @label ||= content.split(/\n\r|\r|\n/).first
+    @label ||= chunks.first.label
   end
 end
