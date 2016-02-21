@@ -4,9 +4,7 @@ class ChunksController < ApplicationController
 
   def create
     @chunk = Chunk.new(chunk_params)
-    page = Page.new
-    page.chunks << @chunk
-    page.save
+    Page.new_with_chunk(@chunk).save
   end
 
   private

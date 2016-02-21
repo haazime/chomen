@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'edit page' do
   before do
-    page = Page.create_with_chunk(chunk)
+    page = Page.new_with_chunk(chunk)
     page.save
     visit edit_page_path(gpid: page.gpid)
   end
