@@ -8,18 +8,25 @@ html.turbolinks-progress-bar::before {
   margin-top: calc(47px + 0.5rem);
 }
 
-textarea {
+textarea.content {
   font-size: 1.2rem !important;
 }
 
-.brand {
-  font-size: 1.1rem;
-  $color: grey;
+$menu-color: grey;
+
+@mixin menu-item($color) {
+  color: $color;
+  &:hover, &:active, &:focus {
+    color: darken($color, 20%);
+  }
+}
+
+.top.fixed.icon.menu {
+  .brand {
+    font-size: 1.1rem;
+  }
 
   a {
-    color: $color;
-    &:hover, &:active, &:focus {
-      color: darken($color, 20%);
-    }
+    @include menu-item($menu-color);
   }
 }
