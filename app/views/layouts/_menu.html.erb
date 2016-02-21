@@ -1,15 +1,13 @@
 <div class="ui top fixed menu">
-  <div class="ui container">
-    <div class="item">
-      <h1 class="brand"><%= link_to 'Chomen', root_url %></h1>
-    </div>
-    <div class="item">
-      <%= link_to new_page_url, class: 'ui button' do %>
-        <i class="write icon"></i>New
-      <% end -%>
-    </div>
-    <div class="item" id="page-summary">
-      <%= render partial: 'pages/summary', locals: { page_size: page_size } %>
-    </div>
+  <div class="item">
+    <h1 class="brand"><%= link_to 'Chomen', root_url %></h1>
+  </div>
+  <div class="item">
+    <%= link_to new_page_url, class: 'ui button' do %>
+      <i class="write icon"></i>New
+    <% end -%>
+  </div>
+  <div class="item" id="page-summary">
+    <%= render partial: 'pages/summary', locals: { page_size: page_size } %>
   </div>
 </div>
