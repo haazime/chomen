@@ -7,18 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="page-list" class="ui sidebar vertical menu">
-    <%= render partial: 'pages/list', locals: { pages: @pages } %>
-  </div>
-  <div class="pusher">
-    <div class="ui one column grid container">
-      <div class="sixtenn wide column">
+  <div class="ui grid container">
+    <div class="pusher">
+      <div class="sixteen wide column">
         <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
       </div>
       <div class="sixteen wide column main">
         <%= yield %>
       </div>
     </div>
+  </div>
+  <div id="page-list" class="ui sidebar vertical menu">
+    <%= render partial: 'pages/list', locals: { pages: @pages } %>
   </div>
 </body>
 </html>
