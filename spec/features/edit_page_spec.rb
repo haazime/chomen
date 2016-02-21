@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'edit page' do
   before do
-    page = Page.new_with_chunk(chunk)
-    page.save
+    page = PageFactory.create(chunk).tap { |p| p.save }
     visit edit_page_path(gpid: page.gpid)
   end
 

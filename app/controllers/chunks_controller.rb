@@ -4,7 +4,7 @@ class ChunksController < ApplicationController
 
   def create
     @chunk = Chunk.new(chunk_params)
-    Page.new_with_chunk(@chunk).save
+    PageFactory.create(@chunk).save
   end
 
   def update
