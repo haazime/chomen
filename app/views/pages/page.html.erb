@@ -2,4 +2,21 @@
   <div id="chunk" class="chunk-area column">
     <%= render partial: 'chunks/form', locals: { chunk: @chunk } %>
   </div>
+  <div style="margin-top: 1.0rem;">
+    <span id="state-anchor" class="ui left floated"></span>
+    <div class="ui mini icon buttons right floated">
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow down icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow right icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow up icon"></i>
+      <% end -%>
+      <%= link_to '#', remote: true, class: 'ui button' do %>
+        <i class="arrow left icon"></i>
+      <% end -%>
+    </div>
+  </div>
 </div>

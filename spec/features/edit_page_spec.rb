@@ -20,7 +20,7 @@ describe 'edit page' do
       fill_in 'chunk[content]', with: 'UPDATED_NOTE'
       edit_form.trigger('submit')
       find('#state')
-      updated_content = edit_form.first('textarea').text
+      updated_content = edit_form.first('textarea').value
       expect(updated_content).to eq('UPDATED_NOTE')
     end
   end

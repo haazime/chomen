@@ -9,7 +9,7 @@ describe 'create page', js: true do
   end
 
   let(:created_content) do
-    find("#edit_chunk_#{Chunk.last.id}").first('textarea').text
+    find("#edit_chunk_#{Chunk.last.id}").first('textarea').value
   end
 
   it { expect(created_content).to eq('NEW_NOTE') }
