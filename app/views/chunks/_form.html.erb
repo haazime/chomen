@@ -1,10 +1,11 @@
 <%= form_for chunk, remote: true, html: { class: 'ui form' } do |f| %>
   <div class="ui field">
-    <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true } %>
+    <%= f.text_area :content, rows: 22, class: 'content', data: { auto_save: true }, autofocus: true %>
   </div>
 <% end -%>
-<div class="ui floated right" style="margin-top: 0.5rem;">
-  <div class="ui mini icon basic buttons">
+<div style="margin-top: 0.5rem;">
+  <div id="state" class="ui label" style="display: none;"><i class="cloud upload icon"></i> Saved.</div>
+  <div class="ui mini icon buttons right floated">
     <%= link_to '#', remote: true, class: 'ui button' do %>
       <i class="arrow down icon"></i>
     <% end -%>
@@ -18,5 +19,4 @@
       <i class="arrow left icon"></i>
     <% end -%>
   </div>
-  <div id="state" class="ui label" style="display: none;"><i class="cloud upload icon"></i> Saved.</div>
 </div>
