@@ -1,24 +1,16 @@
 class PagesController < ApplicationController
   before_action :authorize!
   before_action :set_pages
-  before_action :set_page, only: [:edit, :update]
 
   def new
-    @chunk = Page.new.chunks.build
+    @chunk = Chunk.new
     render :page
   end
 
   def edit
+    page = Page.find_by_gpid(params[:gpid])
+    @chunk = page.chunks.first
     render :page
-  end
-
-  def create
-    @page = Page.new(page_params)
-    if @page.save
-      render
-    else
-      render :page
-    end
   end
 
   def update
@@ -37,9 +29,5 @@ class PagesController < ApplicationController
 
     def set_pages
       @pages = Page.all
-    end
-
-    def set_page
-      @page = Page.find_by(gpid: params[:gpid])
     end
 end
