@@ -5,3 +5,5 @@ $('#page-summary').html("<%=j render(partial: 'pages/summary', locals: { page_si
 showState();
 pageListHandler();
 autoSaveHandler();
+
+$("#edit_chunk_<%= @chunk.id %> textarea").focus();
