@@ -16,6 +16,6 @@ class PagesController < ApplicationController
   private
 
     def set_pages
-      @pages = Page.all
+      @pages = Page.sorted_by_update
     end
 end

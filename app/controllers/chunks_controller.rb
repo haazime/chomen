@@ -19,6 +19,6 @@ class ChunksController < ApplicationController
     end
 
     def set_pages
-      @pages = Page.all
+      @pages = Page.sorted_by_update
     end
 end
