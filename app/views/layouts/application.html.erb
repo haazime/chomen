@@ -2,19 +2,16 @@
 <html>
 <head>
   <title>Chomen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!--
   <div id="page-list" class="ui sidebar vertical menu">
-    <%#= render partial: 'pages/list', locals: { pages: @pages } %>
+    <%= render partial: 'pages/list', locals: { pages: @pages } %>
   </div>
-  -->
-  <!--
   <div class="pusher">
-  -->
     <div class="ui one column grid container">
       <div class="column">
         <%= render partial: 'layouts/menu', locals: { page_size: @pages.size } %>
@@ -23,8 +20,6 @@
         <%= yield %>
       </div>
     </div>
-  <!--
   </div>
-  -->
 </body>
 </html>
