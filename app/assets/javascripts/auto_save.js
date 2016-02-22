@@ -3,7 +3,7 @@ var submitForm = function(form) {
   if (autoSaveTimeoutId) clearTimeout(autoSaveTimeoutId);
   autoSaveTimeoutId = setTimeout(function() {
     $.rails.handleRemote(form);
-  }, 1500);
+  }, 2000);
 }
 
 var autoSaveHandler = function() {
