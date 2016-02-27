@@ -7,6 +7,11 @@ class PagesController < ApplicationController
     render :page
   end
 
+  def edit
+    @page = Page.find_by_gpid(params[:gpid])
+    render :page
+  end
+
   def save
     @page = PageFactory.build_with_chunk(
       params[:chunk][:gpid],

@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-__END__
 describe 'edit page' do
   before do
-    chunk_params = { gpid: 'GPID', id: nil, content: 'CONTENT' }
-    page = PageFactory.build_from_chunk().tap { |p| p.save }
+    page = PageFactory.build_with_chunk(gpid, chunk).tap(&:save)
     visit edit_page_path(gpid: page.gpid)
   end
 
-  let(:form) { find("#edit_chunk_#{chunk.id}") }
+  let(:gpid) { 'GPID' }
+  let(:chunk) { Chunk.new(content: 'SAVED') }
+  let(:form) { find("#content-form") }
 
   describe 'saved content' do
-    let(:saved_content) { edit_form.first('textarea').text }
-    it { expect(saved_content).to have_content('SAVED_NOTE') }
+    let(:content) { form.first('textarea').value }
+    it { expect(content).to have_content(chunk.content) }
   end
 
   skip 'update content', js: true do
