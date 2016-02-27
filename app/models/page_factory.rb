@@ -4,13 +4,13 @@ module PageFactory
   class << self
 
     def create(gpid_generator = GpidGenerator)
-      Page.new(gpid: gpid_generator.generate).tap do |page|
-        page.chunks.build
-      end
+      gpid = gpid_generator.generate
+      chunk = Chunk.new
+      build_with_chunk(gpid, chunk)
     end
 
     def build_with_chunk(gpid, chunk)
-      Page.new(gpid: gpid).tap do |page|
+      Page.new(gpid: gpid) do |page|
         page.chunks << chunk
       end
     end
