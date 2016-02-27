@@ -7,7 +7,7 @@ describe 'create page', js: true do
     visit root_path
     find('#add-page').click
     fill_in 'chunk[content]', with: content
-    find('#content-form').trigger('submit')
+    find('#chunk-form').trigger('submit')
     find('#state')
   end
 

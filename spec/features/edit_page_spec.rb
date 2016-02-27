@@ -6,7 +6,7 @@ describe 'edit page' do
   let(:saved_page) { PageFactory.build_with_chunk(gpid, chunk).tap(&:save) }
   let(:gpid) { 'GPID' }
   let(:chunk) { Chunk.new(content: 'SAVED') }
-  let(:form) { find("#content-form") }
+  let(:form) { find("#chunk-form") }
 
   describe 'saved content' do
     let(:content) { form.first('textarea').value }
