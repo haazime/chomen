@@ -23,17 +23,17 @@ describe PageFactory do
     end
   end
 
-  describe '.build_from_chunk' do
-    let(:chunk_params) { { gpid: gpid, id: nil, content: 'CONTENT' } }
+  describe '.build_with_chunk' do
+    let(:chunk) { Chunk.new(content: 'CONTENT') }
 
     it do
-      page = described_class.build_from_chunk(chunk_params)
-      chunk = page.chunk
+      page = described_class.build_with_chunk(gpid, chunk)
+      created_chunk = page.chunk
 
       aggregate_failures do
         expect(page).to_not be_persisted
         expect(page.gpid).to eq(gpid)
-        expect(chunk.content).to eq('CONTENT')
+        expect(created_chunk.content).to eq('CONTENT')
       end
     end
   end

@@ -9,9 +9,9 @@ module PageFactory
       end
     end
 
-    def build_from_chunk(chunk_params)
-      Page.new(gpid: chunk_params[:gpid]).tap do |page|
-        page.chunks.build(content: chunk_params[:content])
+    def build_with_chunk(gpid, chunk)
+      Page.new(gpid: gpid).tap do |page|
+        page.chunks << chunk
       end
     end
   end

@@ -8,7 +8,10 @@ class PagesController < ApplicationController
   end
 
   def save
-    @page = PageFactory.build_from_chunk(params[:chunk])
+    @page = PageFactory.build_with_chunk(
+      params[:chunk][:gpid],
+      Chunk.new(content: params[:chunk][:content])
+    )
     @page.save
   end
 
