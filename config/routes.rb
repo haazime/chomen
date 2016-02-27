@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   get 'sandbox', to: 'sandbox#index'
 
-  root 'pages#new'
+  root 'pages#index'
 end

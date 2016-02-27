@@ -2,6 +2,11 @@ class PagesController < ApplicationController
   before_action :authorize!
   before_action :set_pages
 
+  def index
+    @page = PageFactory.create
+    render :page
+  end
+
   def new
     @page = PageFactory.create
     render :page
