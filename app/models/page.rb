@@ -7,6 +7,10 @@ class Page < ActiveRecord::Base
     end
   end
 
+  def chunk
+    chunks.first
+  end
+
   def label
     @label ||= chunks.first.label
   end
