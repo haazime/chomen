@@ -21,8 +21,8 @@ class PagesController < ApplicationController
         params[:chunk][:gpid],
         Chunk.new(content: params[:chunk][:content])
       )
+      @page.save
     end
-    @page.save
   end
 
   private

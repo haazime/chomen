@@ -1,9 +1,10 @@
+var autoSaveWait = <%= Rails.env == 'test' ? 1 : 2000 %>;
 var autoSaveTimeoutId;
 var submitForm = function(form) {
   if (autoSaveTimeoutId) clearTimeout(autoSaveTimeoutId);
   autoSaveTimeoutId = setTimeout(function() {
     $.rails.handleRemote(form);
-  }, 2000);
+  }, autoSaveWait);
 }
 
 var autoSaveHandler = function() {
