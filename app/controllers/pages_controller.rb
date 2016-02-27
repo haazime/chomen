@@ -3,14 +3,13 @@ class PagesController < ApplicationController
   before_action :set_pages
 
   def new
-    @chunk = Chunk.new
+    @page = PageFactory.create
     render :page
   end
 
-  def edit
-    page = Page.find_by_gpid(params[:gpid])
-    @chunk = page.chunks.first
-    render :page
+  def save
+    @page = PageFactory.build_from_chunk(params[:chunk])
+    @page.save
   end
 
   private

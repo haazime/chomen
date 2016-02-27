@@ -1,9 +1,8 @@
-$('#chunk').html("<%=j render(partial: 'form', locals: { chunk: @chunk }) %>");
 $('#page-list').html("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
 $('#page-summary').text(<%= @pages.size %>);
 
 showState();
+/*
 pageListHandler();
 autoSaveHandler();
-
-$("#edit_chunk_<%= @chunk.id %> textarea").focus();
+*/

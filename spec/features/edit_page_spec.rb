@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'edit page' do
+  skip do
   before do
     page = PageFactory.create(chunk).tap { |p| p.save }
     visit edit_page_path(gpid: page.gpid)
@@ -24,5 +25,6 @@ describe 'edit page' do
     let(:updated_content) { edit_form.first('textarea').value }
 
     it { expect(updated_content).to eq('UPDATED_NOTE') }
+  end
   end
 end

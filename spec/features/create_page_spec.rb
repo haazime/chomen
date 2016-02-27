@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 describe 'create page', js: true do
+  let(:content) { 'CONTENT' }
+
   before do
-    visit new_page_path
-    fill_in 'chunk[content]', with: 'NEW_NOTE'
-    find('#new_chunk').trigger('submit')
+    visit root_path
+    find('#add-page').click
+    fill_in 'chunk[content]', with: content
+    find('#content-form').trigger('submit')
     find('#state')
   end
 
-  let(:created_content) do
-    find("#edit_chunk_#{Chunk.last.id}").first('textarea').value
+  it do
+    created_chunk = Page.last.chunk
+    expect(created_chunk.content).to eq(content)
   end
-
-  it { expect(created_content).to eq('NEW_NOTE') }
 end
