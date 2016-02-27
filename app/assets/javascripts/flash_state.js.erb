@@ -1,8 +1,9 @@
-var showState = function(anchor) {
+var stateFadeDelay = <%= Rails.env == 'test' ? 1: 1500 %>;
+var showState = function() {
   $('<span id="state" class="ui label"><i class="cloud upload icon"></i> Saved.</span>')
     .appendTo('#state-anchor')
     .fadeIn('fast')
-    .delay(1000)
+    .delay(stateFadeDelay)
     .fadeOut('fast', function() {
       $(this).remove();
     });

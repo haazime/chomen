@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get   '/pages/new',   to: 'pages#new',      as: :new_page
-  get   '/pages/:gpid', to: 'pages#edit',     as: :edit_page
-
-  post  '/chunks',      to: 'chunks#create',  as: :chunks
-  patch   '/chunks/:id',  to: 'chunks#update',  as: :chunk
+  get   '/pages/new',   to: 'pages#new',    as: :new_page
+  post  '/pages',       to: 'pages#save',   as: :pages
+  get   '/pages/:gpid', to: 'pages#edit',   as: :edit_page
 
   get 'sandbox', to: 'sandbox#index'
 
-  root 'pages#new'
+  root 'pages#index'
 end
