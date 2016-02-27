@@ -13,10 +13,15 @@ class PagesController < ApplicationController
   end
 
   def save
-    @page = PageFactory.build_with_chunk(
-      params[:chunk][:gpid],
-      Chunk.new(content: params[:chunk][:content])
-    )
+    if params[:chunk][:id].present?
+      @page = Page.find_by_gpid(params[:chunk][:gpid])
+      @page.chunk.update(content: params[:chunk][:content])
+    else
+      @page = PageFactory.build_with_chunk(
+        params[:chunk][:gpid],
+        Chunk.new(content: params[:chunk][:content])
+      )
+    end
     @page.save
   end
 
