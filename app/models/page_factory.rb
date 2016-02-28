@@ -3,17 +3,22 @@ require 'securerandom'
 module PageFactory
   class << self
 
-    def create(gpid_generator = GpidGenerator)
-      Page.new(gpid: gpid_generator.generate).tap do |page|
-        page.chunks.build
-      end
+    def new_page
+      build_with_chunk(nil, Chunk.new)
     end
 
-    def build_with_chunk(gpid, chunk)
-      Page.new(gpid: gpid).tap do |page|
-        page.chunks << chunk
-      end
+    def create(chunk, gpid_generator = GpidGenerator)
+      gpid = gpid_generator.generate
+      build_with_chunk(gpid, chunk)
     end
+
+    private
+
+      def build_with_chunk(gpid, chunk)
+        Page.new(gpid: gpid) do |page|
+          page.chunks << chunk
+        end
+      end
   end
 end
 
