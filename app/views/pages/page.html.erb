@@ -1,13 +1,10 @@
-<div id="chunk-form-container" class="chunk-area">
+<div id="chunk-form-anchor" class="chunk-area">
   <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
 </div>
 <div style="margin-top: 1.0rem;">
-  <% if @page.chunk.persisted? -%>
-    <%= link_to chunk_url(@page.chunk), method: :delete, data: { confirm: 'Are you sure?' },
-      class: 'ui tiny icon button left floated delete-chunk' do %>
-      <i class="arrow trash icon"></i>
-    <% end -%>
-  <% end -%>
+  <div id="delete-chunk-anchor" class="ui left floated" style="display: inline;">
+    <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
+  </div>
   <span id="state-anchor" class="ui left floated"></span>
   <%= render partial: 'chunks/add_buttons' %>
 </div>
