@@ -2,22 +2,12 @@
   <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
 </div>
 <div style="margin-top: 1.0rem;">
-  <%= link_to '#', remote: true, class: 'ui tiny icon button left floated' do %>
-    <i class="arrow trash icon"></i>
+  <% if @page.chunk.persisted? -%>
+    <%= link_to chunk_url(@page.chunk), method: :delete, data: { confirm: 'Are you sure?' },
+      class: 'ui tiny icon button left floated delete-chunk' do %>
+      <i class="arrow trash icon"></i>
+    <% end -%>
   <% end -%>
   <span id="state-anchor" class="ui left floated"></span>
-  <div class="ui tiny icon buttons right floated">
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow down icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow right icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow up icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow left icon"></i>
-    <% end -%>
-  </div>
+  <%= render partial: 'chunks/add_buttons' %>
 </div>

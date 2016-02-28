@@ -22,4 +22,10 @@ $(document).on('page:change', function() {
   pageListHandler();
   autoSaveHandler();
   chunkAddHandler();
+
+  $('a[data-modal-opener]').on('click', function(e) {
+    e.preventDefault();
+    $('.ui.basic.modal').modal('show');
+  });
 });
+
