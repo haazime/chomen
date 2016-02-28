@@ -1,20 +1,10 @@
-<div id="chunk-form-container" class="chunk-area">
+<div id="chunk-form-anchor" class="chunk-area">
   <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
 </div>
 <div style="margin-top: 1.0rem;">
-  <span id="state-anchor" class="ui left floated"></span>
-  <div class="ui tiny icon buttons right floated">
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow down icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow right icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow up icon"></i>
-    <% end -%>
-    <%= link_to '#', remote: true, class: 'ui button' do %>
-      <i class="arrow left icon"></i>
-    <% end -%>
+  <div id="delete-chunk-anchor" class="ui left floated" style="display: inline;">
+    <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
   </div>
+  <span id="state-anchor" class="ui left floated"></span>
+  <%= render partial: 'chunks/add_buttons' %>
 </div>
