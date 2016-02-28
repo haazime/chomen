@@ -17,6 +17,10 @@ html.turbolinks-progress-bar::before {
 
 textarea.content {
   font-size: 1.2rem !important;
+
+  &:focus {
+    border: 1px solid grey !important;
+  }
 }
 
 $menu-color: grey;
