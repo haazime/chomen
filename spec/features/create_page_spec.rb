@@ -9,7 +9,7 @@ describe 'create page', js: true do
     find('#state')
   end
 
-  let(:form) { find('#chunk-form') }
+  let(:form) { first('.chunk-form') }
 
   let(:saved_page) { Page.last }
 
