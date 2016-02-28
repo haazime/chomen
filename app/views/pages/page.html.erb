@@ -2,9 +2,7 @@
   <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
 </div>
 <div style="margin-top: 1.0rem;">
-  <div id="delete-chunk-anchor" class="ui left floated" style="display: inline;">
-    <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
-  </div>
+  <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
   <span id="state-anchor" class="ui left floated"></span>
   <%= render partial: 'chunks/add_buttons' %>
 </div>
