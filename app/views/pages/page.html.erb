@@ -1,6 +1,6 @@
 <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
 <div style="margin-top: 1.0rem;">
   <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
-  <span id="state-anchor" class="ui left floated"></span>
+  <span id="state" class="ui label state" style="display: none;"><i class="cloud upload icon"></i>Saved.</span>
   <%= render partial: 'chunks/add_buttons' %>
 </div>

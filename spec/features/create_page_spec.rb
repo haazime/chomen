@@ -6,7 +6,7 @@ describe 'create page', js: true do
     find('#add-page').click
     fill_in 'chunk[content]', with: 'CREATE'
     form.trigger('submit')
-    find('#state')
+    find('.state')[0]
   end
 
   let(:form) { first('.chunk-form') }
