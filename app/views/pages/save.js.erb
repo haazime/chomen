@@ -1,9 +1,0 @@
-$('#chunk_gpid').val("<%= @page.gpid %>");
-$('#chunk_id').val("<%= @page.chunk.id %>");
-$('#page-list').html("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
-$('#page-count').text(<%= @pages.size %>);
-$('#delete-chunk-anchor').html("<%=j render(partial: 'chunks/delete_button', locals: { chunk: @page.chunk }) %>")
-
-showState();
-pageListHandler();
-autoSaveHandler();
