@@ -20,6 +20,15 @@ class PagesController < ApplicationController
   def save
     command = SavePageCommands.detect(params[:chunk])
     @page = command.run
+    command.render(self)
+  end
+
+  def render_for_create_page
+    render :create
+  end
+
+  def render_for_update_chunk
+    render :update
   end
 
   private

@@ -5,6 +5,10 @@ module SavePageCommands
       page.tap { |p| p.chunk.update(content: content) }
     end
 
+    def render(controller)
+      controller.render_for_update_chunk
+    end
+
     private
 
       def page
