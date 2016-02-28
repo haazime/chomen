@@ -1,9 +1,5 @@
 var stateFadeDelay = <%= Rails.env == 'test' ? 1: 1500 %>;
 var showState = function() {
-  $('#state')
-    .fadeIn('fast')
-    .delay(stateFadeDelay)
-    .fadeOut('fast', function() {
-      $(this).hide();
-    });
+  toastr.options.closeDuration = 10000;
+  toastr.success('Saved');
 }
