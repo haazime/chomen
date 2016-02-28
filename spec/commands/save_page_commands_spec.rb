@@ -3,9 +3,9 @@ require 'rails_helper'
 describe SavePageCommands do
   describe '.detect' do
     it do
-      params = { gpid: 'GPID', id: '', content: 'CONTENT' }
+      params = { gpid: '', id: '', content: 'CONTENT' }
       command = described_class.detect(params)
-      expected_command = SavePageCommands::CreatePage.new('GPID', 'CONTENT')
+      expected_command = SavePageCommands::CreatePage.new('CONTENT')
       expect(command).to eq(expected_command)
     end
 

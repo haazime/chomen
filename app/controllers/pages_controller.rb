@@ -3,12 +3,12 @@ class PagesController < ApplicationController
   before_action :set_pages
 
   def index
-    @page = PageFactory.create
+    @page = PageFactory.new_page
     render :page
   end
 
   def new
-    @page = PageFactory.create
+    @page = PageFactory.new_page
     render :page
   end
 

@@ -1,8 +1,8 @@
 module SavePageCommands
-  CreatePage = Struct.new(:gpid, :content) do
+  CreatePage = Struct.new(:content) do
 
     def run
-      PageFactory.build_with_chunk(gpid, chunk).tap(&:save)
+      PageFactory.create(chunk).tap(&:save)
     end
 
     private
