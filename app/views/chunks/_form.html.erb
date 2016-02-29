@@ -1,6 +1,6 @@
 <%= form_for chunk,
   url: pages_path, remote: true, method: :post,
-  html: { id: eid(:chunk, i), class: 'ui form chunk-form' } do |f| %>
+  html: { id: eid(:chunk, i), class: 'ui form' } do |f| %>
   <%= f.hidden_field :gpid %>
   <%= f.hidden_field :id %>
   <div class="ui field">
