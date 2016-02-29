@@ -2,7 +2,7 @@ $('#chunk_gpid').val("<%= @page.gpid %>");
 $('#chunk_id').val("<%= @page.chunk.id %>");
 $('#page-list').replaceWith("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
 $('#page-count').text(<%= @pages.size %>);
-$('#delete-chunk-anchor').replaceWith("<%=j render(partial: 'chunks/delete_button', locals: { chunk: @page.chunk }) %>")
+$('#chunk-actions').html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunk }) %>")
 
 showState();
 pageListHandler();

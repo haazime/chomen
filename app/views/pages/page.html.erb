@@ -1,5 +1,6 @@
-<%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
-<div style="margin-top: 1.0rem;">
-  <%= render partial: 'chunks/delete_button', locals: { chunk: @page.chunk } %>
-  <%= render partial: 'chunks/add_buttons' %>
+<div class="ui segment">
+  <%= render partial: 'chunks/form', locals: { chunk: @page.chunk } %>
+  <div id="chunk-actions" class="chunk-actions">
+    <%= render partial: 'chunks/actions', locals: { chunk: @page.chunk } %>
+  </div>
 </div>
