@@ -6,7 +6,7 @@ describe 'delete chunk' do
 
   it do
     visit edit_page_path(gpid: saved_page.gpid)
-    first('.delete-chunk').click;
+    delete_chunk_button.click;
 
     deleted_chunk = Chunk.find_by(id: saved_chunk.id)
     deleted_page = Page.find_by(gpid: saved_page.gpid)
