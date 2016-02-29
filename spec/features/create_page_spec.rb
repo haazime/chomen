@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe 'create page', js: true do
   before do
-    visit root_path
-    find('#add-page').click
+    visit new_page_path
     fill_in 'chunk[content]', with: 'CREATE'
     form.trigger('submit')
     wait_save

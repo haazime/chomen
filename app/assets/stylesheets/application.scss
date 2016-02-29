@@ -5,6 +5,15 @@ html.turbolinks-progress-bar::before {
   background-color: grey !important;
 }
 
+@media only screen and (min-width: 992px) {
+  .ui.container {
+    width: 723px;
+  }
+  .ui.grid.container {
+    width: calc(723px + 2rem) !important;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .ui.container {
     margin-left: 0em !important;
