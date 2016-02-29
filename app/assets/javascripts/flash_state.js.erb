@@ -1,10 +1,6 @@
-var stateFadeDelay = <%= Rails.env == 'test' ? 1: 1500 %>;
+var stateTimeoutDelay = <%= Rails.env == 'test' ? 100 : 1500 %>;
 var showState = function() {
-  $('<span id="state" class="ui label"><i class="cloud upload icon"></i> Saved.</span>')
-    .appendTo('#state-anchor')
-    .fadeIn('fast')
-    .delay(stateFadeDelay)
-    .fadeOut('fast', function() {
-      $(this).remove();
-    });
+  toastr.options.timeOut = stateTimeoutDelay;
+  toastr.options.hideDuration = 200;
+  toastr.success('Saved');
 }

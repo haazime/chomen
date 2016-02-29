@@ -1,7 +1,17 @@
 @import 'semantic-ui';
+@import 'toastr-override';
 
 html.turbolinks-progress-bar::before {
   background-color: grey !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .ui.container {
+    width: 723px;
+  }
+  .ui.grid.container {
+    width: calc(723px + 2rem) !important;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -15,12 +25,18 @@ html.turbolinks-progress-bar::before {
   margin-top: 3rem;
 }
 
+.ui.segment {
+  border-radius: 0;
+}
+
 textarea.content {
   font-size: 1.2rem !important;
+  padding: 0 0.1rem !important;
+  border: none !important;
+}
 
-  &:focus {
-    border: 1px solid grey !important;
-  }
+.chunk-actions {
+  margin-top: 1.5rem;
 }
 
 $menu-color: grey;

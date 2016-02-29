@@ -1,0 +1,12 @@
+<%= link_to '#', remote: true, class: 'ui basic mini circular icon button' do %>
+  <i class="arrow down icon"></i>
+<% end -%>
+<%= link_to '#', remote: true, class: 'ui basic mini circular icon button' do %>
+  <i class="arrow up icon"></i>
+<% end -%>
+<% if chunk.persisted? -%>
+  <%= link_to chunk_url(chunk), method: :delete, data: { confirm: 'DELETE CHUNK Are you sure?' },
+    class: 'ui basic mini circular icon button delete-chunk' do %>
+    <i class="arrow trash icon"></i>
+  <% end -%>
+<% end -%>

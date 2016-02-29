@@ -2,31 +2,25 @@ require 'rails_helper'
 
 describe 'create page', js: true do
   before do
-    visit root_path
-    find('#add-page').click
+    visit new_page_path
     fill_in 'chunk[content]', with: 'CREATE'
     form.trigger('submit')
-    find('#state')
+    wait_save
   end
 
-  let(:form) { find('#chunk-form') }
-
+  let(:form) { first('.chunk-form') }
   let(:saved_page) { Page.last }
 
   context 'first time' do
     it { expect(saved_page.chunk.content).to eq('CREATE') }
-
-    it do
-      delete_button = first('.delete-chunk')
-      expect(delete_button).to_not be_nil
-    end
+    it { expect(delete_chunk_button).to_not be_nil }
   end
 
   context 'continue to edit' do
     before do
       fill_in 'chunk[content]', with: 'UPDATE'
       form.trigger('submit')
-      find('#state')
+      wait_save
       sleep 0.3
     end
 

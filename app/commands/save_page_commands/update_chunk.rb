@@ -1,18 +1,13 @@
 module SavePageCommands
-  UpdateChunk = Struct.new(:gpid, :id, :content) do
+  UpdateChunk = Struct.new(:gcid, :content) do
 
     def run
-      page.tap { |p| p.chunk.update(content: content) }
+      chunk = Chunk.find_by_gcid(gcid)
+      chunk.update(content: content)
     end
 
     def render(controller)
       controller.render_for_update_chunk
     end
-
-    private
-
-      def page
-        Page.find_by_gpid(gpid)
-      end
   end
 end

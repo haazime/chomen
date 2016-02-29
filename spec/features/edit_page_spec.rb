@@ -3,8 +3,8 @@ require 'rails_helper'
 describe 'edit page' do
   before { visit edit_page_path(gpid: saved_page.gpid) }
 
-  let(:saved_page) { SavePageCommands::CreatePage.new('CREATE').run }
-  let(:form) { find("#chunk-form") }
+  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'GCID', 'CREATE').run }
+  let(:form) { first('.chunk-form') }
 
   describe 'saved content' do
     let(:content) { form.first('textarea').value }
@@ -15,7 +15,7 @@ describe 'edit page' do
     before do
       fill_in 'chunk[content]', with: 'UPDATED'
       form.trigger('submit')
-      find('#state')
+      wait_save
     end
 
     it do
