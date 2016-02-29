@@ -16,6 +16,10 @@ html.turbolinks-progress-bar::before {
   margin-top: 3rem;
 }
 
+.ui.segment {
+  border-radius: 0;
+}
+
 textarea.content {
   font-size: 1.2rem !important;
   padding: 0 0 !important;
