@@ -1,5 +1,5 @@
 @import 'semantic-ui';
-@import 'toastr';
+@import 'toastr-override';
 
 html.turbolinks-progress-bar::before {
   background-color: grey !important;
@@ -10,11 +10,6 @@ html.turbolinks-progress-bar::before {
     margin-left: 0em !important;
     margin-right: 0em !important;
   }
-}
-
-#toast-container > div {
-  padding: 5px 5px 5px 45px;
-  width: 100px;
 }
 
 .column.main {
