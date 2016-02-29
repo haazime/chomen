@@ -1,8 +1,9 @@
 <%= form_for chunk,
   url: pages_path, remote: true, method: :post,
   html: { id: eid(:chunk, i), class: 'ui form' } do |f| %>
-  <%= f.hidden_field :gpid %>
-  <%= f.hidden_field :id %>
+  <%= f.hidden_field :gpid, id: eid(:chunk, i, :gpid) %>
+  <%= f.hidden_field :id, id: eid(:chunk, i, :id) %>
+  <%= hidden_field_tag :chunk_index, i, id: nil %>
   <div class="ui field">
     <%= f.text_area :content, rows: 7, class: 'content', data: { auto_save: true }, autofocus: true %>
   </div>
