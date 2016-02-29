@@ -6,12 +6,11 @@ describe 'create page', js: true do
     find('#add-page').click
     fill_in 'chunk[content]', with: 'CREATE'
     form.trigger('submit')
-    find('#toast-container')
+    wait_save
   end
 
-  let(:form) { first('.chunk-form') }
-
   let(:saved_page) { Page.last }
+  let(:form) { first('.chunk-form') }
 
   context 'first time' do
     it { expect(saved_page.chunk.content).to eq('CREATE') }
@@ -26,7 +25,7 @@ describe 'create page', js: true do
     before do
       fill_in 'chunk[content]', with: 'UPDATE'
       form.trigger('submit')
-      find('#toast-container')
+      wait_save
       sleep 0.3
     end
 

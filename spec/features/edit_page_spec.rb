@@ -15,7 +15,7 @@ describe 'edit page' do
     before do
       fill_in 'chunk[content]', with: 'UPDATED'
       form.trigger('submit')
-      find('#toast-container')
+      wait_save
     end
 
     it do
