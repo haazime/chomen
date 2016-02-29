@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require semantic-ui
+//= require autosize
 //= require turbolinks
 //= require_tree .
 
@@ -23,9 +24,6 @@ $(document).on('page:change', function() {
   autoSaveHandler();
   chunkAddHandler();
 
-  $('a[data-modal-opener]').on('click', function(e) {
-    e.preventDefault();
-    $('.ui.basic.modal').modal('show');
-  });
+  autosize($('textarea.content'));
 });
 
