@@ -2,6 +2,14 @@ require 'securerandom'
 
 class PageFactory
   class << self
+
+    def new_page
+      new.new_page
+    end
+
+    def create_page(gpid, gcid, content)
+      new.create_page(gpid, gcid, content)
+    end
   end
 
   def initialize(gpid_generator = GPIDGenerator, gcid_generator = GCIDGenerator)

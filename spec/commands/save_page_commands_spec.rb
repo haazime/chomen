@@ -2,18 +2,28 @@ require 'rails_helper'
 
 describe SavePageCommands do
   describe '.detect' do
-    it do
-      params = { gpid: '', gcid: 'GCID', content: 'CONTENT' }
-      command = described_class.detect(params)
-      expected_command = SavePageCommands::CreatePage.new('CONTENT')
-      expect(command).to eq(expected_command)
+    let(:gpid) { 'GPID' }
+    let(:gcid) { 'GCID' }
+    let(:content) { 'CONTENT' }
+
+    context 'when no page' do
+      it do
+        params = { gpid: gpid, gcid: gcid, content: content }
+        command = described_class.detect(params)
+        expected_command = SavePageCommands::CreatePage.new(gpid, gcid, content)
+        expect(command).to eq(expected_command)
+      end
     end
 
-    it do
-      params = { gpid: 'GPID', gcid: 'GCID', content: 'CONTENT' }
-      command = described_class.detect(params)
-      expected_command = SavePageCommands::UpdateChunk.new('GPID', '1', 'CONTENT')
-      expect(command).to eq(expected_command)
+    context 'when page is exists' do
+      before { Page.create!(gpid: gpid) }
+
+      it do
+        params = { gpid: gpid, gcid: gcid, content: content }
+        command = described_class.detect(params)
+        expected_command = SavePageCommands::UpdateChunk.new(gcid, content)
+        expect(command).to eq(expected_command)
+      end
     end
   end
 end
