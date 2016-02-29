@@ -1,33 +1,47 @@
 require 'securerandom'
 
-module PageFactory
+class PageFactory
   class << self
+  end
 
-    def new_page
-      build_with_chunk(nil, Chunk.new)
-    end
+  def initialize(gpid_generator = GPIDGenerator, gcid_generator = GCIDGenerator)
+    @gpid_generator = gpid_generator
+    @gcid_generator = gcid_generator
+  end
 
-    def create(chunk, gpid_generator = GpidGenerator)
-      gpid = gpid_generator.generate
-      build_with_chunk(gpid, chunk)
-    end
+  def new_page
+    gpid = @gpid_generator.generate
+    gcid = @gcid_generator.generate
+    chunk = Chunk.new(gcid: gcid)
+    build_with_chunk(gpid, chunk)
+  end
 
-    private
+  def create_page(gpid, gcid, content)
+    chunk = Chunk.new(gcid: gcid, content: content)
+    build_with_chunk(gpid, chunk)
+  end
 
-      def build_with_chunk(gpid, chunk)
-        Page.new(gpid: gpid) do |page|
-          page.chunks << chunk
-        end
+  private
+
+    def build_with_chunk(gpid, chunk)
+      Page.new(gpid: gpid) do |page|
+        page.chunks << chunk
       end
+    end
+end
+
+module GPIDGenerator
+  module_function
+
+  def generate
+    "pg-#{SecureRandom.uuid}"
   end
 end
 
-module PageFactory
-  module GpidGenerator
-    module_function
+module GCIDGenerator
+  module_function
 
-    def generate
-      SecureRandom.uuid
-    end
+  def generate
+    "ch-#{SecureRandom.uuid}"
   end
 end
