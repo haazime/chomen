@@ -1,10 +1,8 @@
 $('#page-list').replaceWith("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
 $('#page-count').text(<%= @pages.size %>);
 
-$('<%= css_eid(:chunk, params[:chunk_index], :gpid) %>').val("<%= @page.gpid %>");
-$('<%= css_eid(:chunk, params[:chunk_index], :id) %>').val("<%= @page.chunk.id %>");
-$('<%= css_eid(:chunk, params[:chunk_index], :actions) %>').html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunk }) %>");
+$('#<%= @page.chunk.gcid %> .chunk-actions')
+  .first()
+  .html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunk }) %>");
 
 showState();
-pageListHandler();
-autoSaveHandler();
