@@ -8,8 +8,8 @@ describe 'create page', js: true do
     wait_save
   end
 
+  let(:form) { find(css_eid(:chunk, 0)).find('form') }
   let(:saved_page) { Page.last }
-  let(:form) { first('.chunk-form') }
 
   context 'first time' do
     it { expect(saved_page.chunk.content).to eq('CREATE') }

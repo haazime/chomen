@@ -1,3 +1,3 @@
 <% @page.chunks.each_with_index do |chunk, i| -%>
-  <%= render partial: 'chunks/chunk', locals: { chunk: chunk, index: i } %>
+  <%= render partial: 'chunks/chunk', locals: { chunk: chunk, i: i } %>
 <% end -%>
