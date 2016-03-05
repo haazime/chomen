@@ -13,7 +13,7 @@ describe 'create page', js: true do
 
   context 'first time' do
     it { expect(saved_page.chunk.content).to eq('CREATE') }
-    it { expect(delete_chunk_button).to_not be_nil }
+    it { expect(delete_chunk_button(1)).to_not be_nil }
   end
 
   context 'continue to edit' do
