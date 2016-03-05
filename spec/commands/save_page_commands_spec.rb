@@ -25,5 +25,16 @@ describe SavePageCommands do
         expect(command).to eq(expected_command)
       end
     end
+
+    context 'when page and chunk are exist' do
+      before { Page.create!(gpid: gpid) }
+
+      it do
+        params = { gpid: gpid, gcid: '', content: content }
+        command = described_class.detect(params)
+        expected_command = SavePageCommands::AddChunk.new(gpid, content)
+        expect(command).to eq(expected_command)
+      end
+    end
   end
 end
