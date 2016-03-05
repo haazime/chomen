@@ -8,9 +8,9 @@ describe SavePageCommands do
 
     context 'when no page' do
       it do
-        params = { gpid: gpid, gcid: gcid, content: content }
+        params = { gpid: gpid, gcid: '', content: content }
         command = described_class.detect(params)
-        expected_command = SavePageCommands::CreatePage.new(gpid, gcid, content)
+        expected_command = SavePageCommands::CreatePage.new(gpid, content)
         expect(command).to eq(expected_command)
       end
     end

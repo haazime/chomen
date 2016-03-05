@@ -1,5 +1,5 @@
 module SavePageCommands
-  CreatePage = Struct.new(:gpid, :gcid, :content) do
+  CreatePage = Struct.new(:gpid, :content) do
 
     def run
       PageFactory.create_page(gpid, gcid, content).tap(&:save)

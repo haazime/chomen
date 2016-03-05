@@ -6,7 +6,7 @@ module SavePageCommands
 
     def detect(params)
       return UpdateChunk.new(params[:gcid], params[:content]) if page_exist?(params[:gpid])
-      CreatePage.new(params[:gpid], params[:gcid], params[:content])
+      CreatePage.new(params[:gpid], params[:content])
     end
 
     private
