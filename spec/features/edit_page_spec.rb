@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'edit page' do
   before { visit edit_page_path(gpid: saved_page.gpid) }
 
-  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'GCID', 'CREATE').run }
+  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'CREATE').run }
   let(:form) { chunk_form(1) }
 
   describe 'saved content' do

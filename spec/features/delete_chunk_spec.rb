@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'delete chunk' do
-  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'GCID', 'CREATE').run }
+  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'CREATE').run }
   let(:saved_chunk) { saved_page.chunk }
 
   it do
