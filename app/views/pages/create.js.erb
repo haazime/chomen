@@ -1,9 +1,9 @@
 $('#page-list').replaceWith("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
 $('#page-count').text(<%= @pages.size %>);
 
-$('#chunk-segment-<%= saved_chunk_number %> .gcid')
-  .first()
+$('#chunk-segment-<%= saved_chunk_number %> input[name="chunk[gcid]"]')
   .val('<%= @page.chunks.last.gcid %>');
+
 $('#chunk-segment-<%= saved_chunk_number %> .chunk-actions')
   .first()
   .html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunks.last }) %>");
