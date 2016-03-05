@@ -8,4 +8,12 @@ module Generators
       "pg-#{SecureRandom.uuid}"
     end
   end
+
+  module GCID
+    module_function
+
+    def generate
+      "ch-#{SecureRandom.uuid}"
+    end
+  end
 end

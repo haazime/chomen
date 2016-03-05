@@ -1,8 +1,11 @@
 $('#page-list').replaceWith("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
 $('#page-count').text(<%= @pages.size %>);
 
-$('#<%= @page.chunk.gcid %> .chunk-actions')
+$('#chunk-segment-<%= saved_chunk_number %> .gcid')
   .first()
-  .html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunk }) %>");
+  .val('<%= @page.chunks.last.gcid %>');
+$('#chunk-segment-<%= saved_chunk_number %> .chunk-actions')
+  .first()
+  .html("<%=j render(partial: 'chunks/actions', locals: { chunk: @page.chunks.last }) %>");
 
 showState();

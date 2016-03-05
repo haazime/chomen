@@ -12,7 +12,7 @@ describe 'create page', js: true do
   let(:saved_page) { Page.last }
 
   context 'first time' do
-    it { expect(saved_page.chunk.content).to eq('CREATE') }
+    it { expect(saved_page.chunks.last.content).to eq('CREATE') }
     it { expect(delete_chunk_button(1)).to_not be_nil }
   end
 
@@ -23,6 +23,6 @@ describe 'create page', js: true do
       wait_for_ajax
     end
 
-    it { expect(saved_page.chunk.reload.content).to eq('UPDATE') }
+    it { expect(saved_page.chunks.last.content).to eq('UPDATE') }
   end
 end

@@ -2,7 +2,10 @@ module SavePageCommands
   CreatePage = Struct.new(:gpid, :content) do
 
     def run
-      PageFactory.create_page(gpid, gcid, content).tap(&:save)
+      Page.new(gpid: gpid) do |page|
+        page.add_chunk(content)
+        page.save
+      end
     end
 
     def render(controller)
