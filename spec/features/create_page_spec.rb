@@ -3,12 +3,12 @@ require 'rails_helper'
 describe 'create page', js: true do
   before do
     visit new_page_path
-    fill_in 'chunk[content]', with: 'CREATE'
+    form.first('textarea').set('CREATE')
     form.trigger('submit')
     wait_for_ajax
   end
 
-  let(:form) { first('.chunk-form') }
+  let(:form) { chunk_form(1) }
   let(:saved_page) { Page.last }
 
   context 'first time' do
@@ -18,7 +18,7 @@ describe 'create page', js: true do
 
   context 'continue to edit' do
     before do
-      fill_in 'chunk[content]', with: 'UPDATE'
+      form.first('textarea').set('UPDATE')
       form.trigger('submit')
       wait_for_ajax
     end

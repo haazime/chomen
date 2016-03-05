@@ -4,7 +4,7 @@ describe 'edit page' do
   before { visit edit_page_path(gpid: saved_page.gpid) }
 
   let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'GCID', 'CREATE').run }
-  let(:form) { first('.chunk-form') }
+  let(:form) { chunk_form(1) }
 
   describe 'saved content' do
     let(:content) { form.first('textarea').value }
@@ -13,7 +13,7 @@ describe 'edit page' do
 
   describe 'update content', js: true do
     before do
-      fill_in 'chunk[content]', with: 'UPDATED'
+      form.first('textarea').set('UPDATED')
       form.trigger('submit')
       wait_for_ajax
     end
