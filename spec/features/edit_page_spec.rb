@@ -15,7 +15,7 @@ describe 'edit page' do
     before do
       fill_in 'chunk[content]', with: 'UPDATED'
       form.trigger('submit')
-      wait_save
+      wait_for_ajax
     end
 
     it do

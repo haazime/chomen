@@ -1,7 +1,7 @@
-<%= link_to '#', remote: true, class: 'ui basic mini circular icon button' do %>
+<%= link_to '#', data: { add_chunk_to_down: true }, class: 'ui basic mini circular icon button add-chunk-to-down' do %>
   <i class="arrow down icon"></i>
 <% end -%>
-<%= link_to '#', remote: true, class: 'ui basic mini circular icon button' do %>
+<%= link_to '#', class: 'ui basic mini circular icon button add-chunk-to-up' do %>
   <i class="arrow up icon"></i>
 <% end -%>
 <% if chunk.persisted? -%>

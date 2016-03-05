@@ -5,7 +5,7 @@ describe 'create page', js: true do
     visit new_page_path
     fill_in 'chunk[content]', with: 'CREATE'
     form.trigger('submit')
-    wait_save
+    wait_for_ajax
   end
 
   let(:form) { first('.chunk-form') }
@@ -20,8 +20,7 @@ describe 'create page', js: true do
     before do
       fill_in 'chunk[content]', with: 'UPDATE'
       form.trigger('submit')
-      wait_save
-      sleep 0.3
+      wait_for_ajax
     end
 
     it { expect(saved_page.chunk.reload.content).to eq('UPDATE') }

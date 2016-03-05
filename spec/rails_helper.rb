@@ -31,7 +31,8 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.include ApplicationHelper
-  config.include UIHelper
+  config.include WaitHelper, type: :feature
+  config.include UIHelper, type: :feature
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

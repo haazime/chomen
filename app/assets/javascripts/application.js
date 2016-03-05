@@ -22,7 +22,7 @@ Turbolinks.enableProgressBar();
 $(document).on('page:change', function() {
   pageListHandler();
   autoSaveHandler();
-  chunkAddHandler();
+  chunkAdditionHandler();
 
   autosize($('textarea.content'));
 });
