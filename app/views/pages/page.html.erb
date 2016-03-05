@@ -1,3 +1,9 @@
-<% @page.chunks.each_with_index do |chunk| -%>
+<% @page.chunks.each do |chunk| -%>
   <%= render partial: 'chunks/chunk', locals: { chunk: chunk } %>
 <% end -%>
+<div>
+  <%= link_to '#', data: { chunk_adder: true, chunk_count: @page.chunks.size },
+      class: 'ui right floated basic mini circular icon button' do %>
+    <i class="plus icon"></i>
+  <% end -%>
+</div>

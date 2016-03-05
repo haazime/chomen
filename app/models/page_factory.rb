@@ -29,6 +29,10 @@ class PageFactory
     build_with_chunk(gpid, chunk)
   end
 
+  def new_chunk(gpid)
+    chunk = Chunk.new()
+  end
+
   private
 
     def build_with_chunk(gpid, chunk)

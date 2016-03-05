@@ -19,11 +19,10 @@
 
 Turbolinks.enableProgressBar();
 
+chunkAdditionHandler();
+autoSaveHandler();
+
 $(document).on('page:change', function() {
   pageListHandler();
-  autoSaveHandler();
-  chunkAdditionHandler();
-
   autosize($('textarea.content'));
 });
-

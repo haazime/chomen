@@ -1,4 +1,5 @@
 var autoSaveWait = <%= Rails.env == 'test' ? 1 : 2000 %>;
+
 var autoSaveTimeoutId;
 var submitForm = function(form) {
   if (autoSaveTimeoutId) clearTimeout(autoSaveTimeoutId);
@@ -8,7 +9,7 @@ var submitForm = function(form) {
 }
 
 var autoSaveHandler = function() {
-  $('textarea[data-auto-save]').on('input', function() {
+  $(document).on('input', 'textarea[data-auto-save]', function() {
     var form = $(this).closest('form');
     submitForm(form);
   });
