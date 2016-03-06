@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'delete chunk' do
-  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'CREATE').run }
+  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 1, 'CREATE').run }
 
   it do
     visit edit_page_path(gpid: saved_page.gpid)

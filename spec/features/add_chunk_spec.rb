@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'add chunk', js: true do
   before { visit edit_page_path(gpid: saved_page.gpid) }
-  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 'CREATE').run }
+  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 1, 'CREATE').run }
 
   it do
     first('a[data-chunk-adder]').click
