@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   end
 
   def render_for_create_page
-    render :create
+    render :create, locals: { chunk: @page.chunks.last }
   end
 
   def render_for_update_chunk

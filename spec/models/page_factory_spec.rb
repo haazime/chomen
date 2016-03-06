@@ -11,6 +11,7 @@ describe PageFactory do
         expect(page.gpid).to_not be_nil
         expect(chunk).to_not be_persisted
         expect(chunk.gcid).to be_nil
+        expect(chunk.number).to eq(1)
         expect(chunk.content).to be_nil
       end
     end

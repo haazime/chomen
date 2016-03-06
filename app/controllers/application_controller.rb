@@ -3,12 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def saved_chunk_number
-    params[:chunk_number]
-  end
-
-  helper_method :saved_chunk_number
-
   protected
 
     def authorize!

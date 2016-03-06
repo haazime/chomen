@@ -8,7 +8,7 @@ var chunkAdditionHandler = function() {
 
     var base = $('.chunk-segment').last();
     var clone = $(base).clone();
-    $(clone).find('input[name="chunk_number"]').val(newChunkCount);
+    $(clone).find('input[name="chunk[number]"]').val(newChunkCount);
     $(clone).find('input[name="chunk[gcid]"]').val('');
     $(clone).find('textarea').val('');
     $(clone).find('.chunk-actions').html('');

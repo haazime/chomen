@@ -10,7 +10,7 @@ class PageFactory
 
   def new_page
     gpid = @gpid_generator.generate
-    chunk = Chunk.new
+    chunk = Chunk.new(number: 1)
     build_with_chunk(gpid, chunk)
   end
 
