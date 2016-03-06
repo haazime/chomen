@@ -8,7 +8,7 @@ describe SavePageCommands::UpdateChunk do
 
       command = described_class.new(gcid, 'UPDATE')
       command.run
-      chunk = Chunk.last
+      chunk = command.result.chunk
 
       expect(chunk.content).to eq('UPDATE')
     end

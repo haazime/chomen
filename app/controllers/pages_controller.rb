@@ -19,12 +19,12 @@ class PagesController < ApplicationController
 
   def save
     command = SavePageCommands.detect(params[:chunk])
-    @page = command.run
+    command.run
     command.render(self)
   end
 
-  def render_for_create_page
-    render :create, locals: { chunk: @page.chunks.last }
+  def render_for_create_page(chunk)
+    render :create, locals: { chunk: chunk }
   end
 
   def render_for_update_chunk

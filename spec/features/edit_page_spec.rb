@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'edit page' do
   before { visit edit_page_path(gpid: saved_page.gpid) }
 
-  let(:saved_page) { SavePageCommands::CreatePage.new('GPID', 1, 'CREATE').run }
+  let(:saved_page) { create_page('GPID', 1, 'CREATE') }
   let(:form) { chunk_form(1) }
 
   describe 'saved content' do
@@ -19,7 +19,7 @@ describe 'edit page' do
     end
 
     it do
-      expect(saved_page.reload.chunk.content).to eq('UPDATED')
+      expect(saved_page.reload.chunks.last.content).to eq('UPDATED')
     end
   end
 end

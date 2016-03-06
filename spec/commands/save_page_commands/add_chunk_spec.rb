@@ -8,7 +8,7 @@ describe SavePageCommands::AddChunk do
 
       command = described_class.new(gpid, 2, 'CHUNK2')
       command.run
-      chunk = Chunk.last
+      chunk = command.result.chunk
 
       aggregate_failures do
         expect(chunk.number).to eq(2)

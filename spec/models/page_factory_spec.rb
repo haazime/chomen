@@ -4,7 +4,7 @@ describe PageFactory do
   describe '.new_page' do
     it do
       page = described_class.new_page
-      chunk = page.chunk
+      chunk = page.chunks.last
 
       aggregate_failures do
         expect(page).to_not be_persisted

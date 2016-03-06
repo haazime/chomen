@@ -5,8 +5,8 @@ describe SavePageCommands::CreatePage do
     it do
       command = described_class.new('GPID', 1, 'CHUNK')
       command.run
-      page = Page.last
-      chunk = page.chunks.last
+      page = command.result.page
+      chunk = command.result.chunk
 
       aggregate_failures do
         expect(page.gpid).to eq('GPID')
