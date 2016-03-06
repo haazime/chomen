@@ -1,4 +1,4 @@
-<% @page.chunks.each.with_index(1) do |chunk, n| -%>
+<% @chunks.each.with_index(1) do |chunk, n| -%>
   <%= render partial: 'chunks/chunk', locals: { chunk: chunk, n: n } %>
 <% end -%>
 <div>

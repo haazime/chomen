@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  has_many :chunks, -> { order(:number) }, dependent: :destroy
+  has_many :chunks, dependent: :destroy
 
   class << self
 
@@ -14,6 +14,14 @@ class Page < ActiveRecord::Base
   end
 
   def label
-    @label ||= chunks.first.label
+    @label ||= chunk(1).label
+  end
+
+  def chunk(number)
+    ordered_chunks[number - 1]
+  end
+
+  def ordered_chunks
+    chunks.order(:number)
   end
 end
