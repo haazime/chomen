@@ -1,12 +1,22 @@
-require 'save_page_commands/update_chunk'
 require 'save_page_commands/create_page'
+require 'save_page_commands/update_chunk'
+require 'save_page_commands/add_chunk'
 
 module SavePageCommands
   class << self
 
     def detect(params)
-      return UpdateChunk.new(params[:gcid], params[:content]) if page_exist?(params[:gpid])
-      CreatePage.new(params[:gpid], params[:gcid], params[:content])
+      return update_page(params) if page_exist?(params[:gpid])
+      create_page(params)
+    end
+
+    def create_page(params)
+      CreatePage.new(params[:gpid], params[:number], params[:content])
+    end
+
+    def update_page(params)
+      return UpdateChunk.new(params[:gcid], params[:content]) if params[:gcid].present?
+      AddChunk.new(params[:gpid], params[:number], params[:content])
     end
 
     private

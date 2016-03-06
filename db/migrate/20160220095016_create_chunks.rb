@@ -3,6 +3,7 @@ class CreateChunks < ActiveRecord::Migration
     create_table :chunks do |t|
       t.references :page, null: false
       t.string :gcid, null: false
+      t.integer :number, null: false
       t.text :content, null: false
 
       t.timestamps null: false

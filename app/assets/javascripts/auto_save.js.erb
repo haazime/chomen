@@ -1,15 +1,19 @@
 var autoSaveWait = <%= Rails.env == 'test' ? 1 : 2000 %>;
-var autoSaveTimeoutId;
+
+var autoSaveTimeoutIds = {};
 var submitForm = function(form) {
-  if (autoSaveTimeoutId) clearTimeout(autoSaveTimeoutId);
-  autoSaveTimeoutId = setTimeout(function() {
+  var n = $(form).find('input[name="chunk[number]"]').val();
+  if (autoSaveTimeoutIds[n]) clearTimeout(autoSaveTimeoutIds[n]);
+  autoSaveTimeoutIds[n] = setTimeout(function() {
     $.rails.handleRemote(form);
   }, autoSaveWait);
 }
 
 var autoSaveHandler = function() {
-  $('textarea[data-auto-save]').on('input', function() {
-    var form = $(this).closest('form');
-    submitForm(form);
+  $(document).on('input', 'textarea[data-auto-save]', function() {
+    $.each($(this), function(i, textarea) {
+      var form = $(textarea).closest('form');
+      submitForm(form);
+    })
   });
 }

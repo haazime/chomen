@@ -8,8 +8,9 @@ class Page < ActiveRecord::Base
     end
   end
 
-  def chunk
-    chunks.first
+  def add_chunk(chunk, gcid_generator: Generators::GCID)
+    chunk.gcid = gcid_generator.generate
+    self.chunks << chunk
   end
 
   def label

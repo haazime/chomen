@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160220095016) do
   create_table "chunks", force: :cascade do |t|
     t.integer  "page_id",    null: false
     t.string   "gcid",       null: false
+    t.integer  "number",     null: false
     t.text     "content",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

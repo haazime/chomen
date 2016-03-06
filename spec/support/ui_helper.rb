@@ -1,10 +1,18 @@
 module UIHelper
 
-  def wait_save
-    find('#toast-container')
+  def chunk_segment(num)
+    chunk_segments[num - 1]
   end
 
-  def delete_chunk_button
-    first('.delete-chunk')
+  def chunk_form(num)
+    all('.chunk-form')[num - 1]
+  end
+
+  def delete_chunk_button(num)
+    all('.delete-chunk')[num - 1]
+  end
+
+  def chunk_segments
+    all('.chunk-segment')
   end
 end
