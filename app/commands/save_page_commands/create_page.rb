@@ -1,9 +1,9 @@
 module SavePageCommands
-  CreatePage = Struct.new(:gpid, :content) do
+  CreatePage = Struct.new(:gpid, :number, :content) do
 
     def run
       Page.new(gpid: gpid) do |page|
-        page.add_chunk(content)
+        page.add_chunk(number, content)
         page.save
       end
     end

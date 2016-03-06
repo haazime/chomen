@@ -11,12 +11,12 @@ module SavePageCommands
     end
 
     def create_page(params)
-      CreatePage.new(params[:gpid], params[:content])
+      CreatePage.new(params[:gpid], params[:number], params[:content])
     end
 
     def update_page(params)
       return UpdateChunk.new(params[:gcid], params[:content]) if params[:gcid].present?
-      AddChunk.new(params[:gpid], params[:content])
+      AddChunk.new(params[:gpid], params[:number], params[:content])
     end
 
     private

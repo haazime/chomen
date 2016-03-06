@@ -8,9 +8,9 @@ class Page < ActiveRecord::Base
     end
   end
 
-  def add_chunk(content, gcid_generator = Generators::GCID)
+  def add_chunk(number, content, gcid_generator = Generators::GCID)
     gcid = gcid_generator.generate
-    self.chunks.build(gcid: gcid, content: content)
+    self.chunks.build(gcid: gcid, number: number, content: content)
   end
 
   def chunk
