@@ -3,6 +3,10 @@ class Page < ActiveRecord::Base
 
   class << self
 
+    def last_updated
+      includes(:chunks).order('chunks.updated_at DESC').limit(1).first
+    end
+
     def sorted_by_update
       includes(:chunks).order(updated_at: :desc)
     end
@@ -22,6 +26,7 @@ class Page < ActiveRecord::Base
   end
 
   def ordered_chunks
+    return chunks unless persisted?
     chunks.order(:number)
   end
 end

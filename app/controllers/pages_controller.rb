@@ -3,20 +3,17 @@ class PagesController < ApplicationController
   before_action :set_pages
 
   def index
-    @page = PageFactory.new_page
-    @chunks = @page.chunks
+    @page = Page.last_updated || PageFactory.new_page
     render :page
   end
 
   def new
     @page = PageFactory.new_page
-    @chunks = @page.chunks
     render :page
   end
 
   def edit
     @page = Page.find_by_gpid(params[:gpid])
-    @chunks = @page.ordered_chunks
     render :page
   end
 
