@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  has_many :chunks, dependent: :destroy
+  has_many :chunks, -> { order(:number) }, dependent: :destroy
 
   class << self
 
