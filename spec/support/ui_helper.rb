@@ -8,6 +8,10 @@ module UIHelper
     all('.chunk-form')[num - 1]
   end
 
+  def chunk_content(num)
+    all('textarea.content')[num - 1]&.text
+  end
+
   def delete_chunk_button(num)
     all('.delete-chunk')[num - 1]
   end

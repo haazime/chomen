@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    def render_404
+      render file: 'public/404.html', status: :not_found, layout: false
+    end
+
     def authorize!
       return unless Rails.env == 'production'
       unless authenticate_with_http_basic { |u, p| authenticate(u, p) }
