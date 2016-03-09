@@ -3,8 +3,11 @@ var createChunkSegment = function(base, number) {
   clone.attr('id', 'chunk-segment-' + number);
   clone.find('input[name="chunk[number]"]').val(number);
   clone.find('input[name="chunk[gcid]"]').val('');
-  clone.find('textarea').val('');
   clone.find('.chunk-actions').html('');
+  clone.find('textarea').text('');
+  clone.find('textarea').attr('rows', 1);
+  clone.find('textarea').css('height', '21px');
+  autosize(clone.find('textarea'));
   return clone;
 }
 
