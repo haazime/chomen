@@ -7,13 +7,12 @@ describe 'delete chunk' do
     it do
       visit edit_page_path(gpid: saved_page.gpid)
       delete_chunk_button(1).click
-
       visit edit_page_path(gpid: saved_page.gpid)
       expect(page.status_code).to eq(404)
     end
   end
 
-  skip 'page=1, chunk=2' do
+  context 'page=1, chunk=2' do
     before do
       add_chunk(saved_page.gpid, 2, 'CHUNK2')
     end
@@ -21,11 +20,8 @@ describe 'delete chunk' do
     it do
       visit edit_page_path(gpid: saved_page.gpid)
       delete_chunk_button(1).click
-
-      aggregate_failures do
-        expect(Page.count).to eq(0)
-        expect(Chunk.count).to eq(0)
-      end
+      visit edit_page_path(gpid: saved_page.gpid)
+      expect(chunk_content(1)).to eq('CHUNK2')
     end
   end
 end

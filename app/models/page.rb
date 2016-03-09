@@ -17,6 +17,14 @@ class Page < ActiveRecord::Base
     self.chunks << chunk
   end
 
+  def destroy_from_chunk(chunk_id)
+    if chunks(true).many?
+      chunks.destroy(chunk_id)
+    else
+      destroy
+    end
+  end
+
   def label
     @label ||= chunk(1).label
   end
