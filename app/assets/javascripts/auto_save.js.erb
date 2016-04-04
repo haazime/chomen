@@ -4,8 +4,9 @@ var autoSaveTimeoutIds = {};
 var submitForm = function(form) {
   var key = $(form).find('input[name="chunk[gcid]"]').val();
 
-  if (autoSaveTimeoutIds[key]) {
-    clearTimeout(autoSaveTimeoutIds[key]);
+  var timeoutId = autoSaveTimeoutIds[key];
+  if (timeoutId) {
+    clearTimeout(timeoutId);
   }
 
   autoSaveTimeoutIds[key] = setTimeout(function() {

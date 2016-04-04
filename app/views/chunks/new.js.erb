@@ -1,2 +1,3 @@
-$('<%=j render(partial: 'chunks/chunk', locals: { chunk: @chunk }) %>')
-  .insertAfter($('.chunk-segment').last());
+$('<%=j render(partial: 'chunks/chunk', locals: { chunk: @chunk }) %>').insertAfter($('.chunk-segment').last());
+
+autosize($('#chunk-segment-<%= @chunk.gcid %>').find('textarea.content'));
