@@ -1,7 +1,7 @@
 class ChunksController < ApplicationController
 
   def new
-    page = Page.find_by_gpid(params[:gpid])
+    page = Page.find_or_initialize_by(gpid: params[:gpid])
     @chunk = page.chunks.build
   end
 
