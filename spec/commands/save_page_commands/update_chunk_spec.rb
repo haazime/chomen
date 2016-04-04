@@ -3,10 +3,9 @@ require 'rails_helper'
 describe SavePageCommands::UpdateChunk do
   describe '#run' do
     it do
-      SavePageCommands::CreatePage.new('GPID', 1, 'CREATE').run
-      gcid = Chunk.last.gcid
+      SavePageCommands::CreatePage.new('GPID', 'GCID', 'CREATE').run
 
-      command = described_class.new(gcid, 'UPDATE')
+      command = described_class.new('GCID', 'UPDATE')
       command.run
       chunk = command.result.chunk
 

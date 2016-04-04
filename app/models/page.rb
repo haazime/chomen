@@ -12,9 +12,12 @@ class Page < ActiveRecord::Base
     end
   end
 
-  def add_chunk(chunk, gcid_generator: Generators::GCID)
-    chunk.gcid = gcid_generator.generate
-    self.chunks << chunk
+  def add_new_chunk(gcid_generator = Generators::GCID)
+    add_chunk(gcid_generator.generate, nil)
+  end
+
+  def add_chunk(gcid, content)
+    self.chunks.build(gcid: gcid, content: content)
   end
 
   def destroy_from_chunk(chunk_id)
@@ -26,15 +29,11 @@ class Page < ActiveRecord::Base
   end
 
   def label
-    @label ||= chunk(1).label
-  end
-
-  def chunk(number)
-    ordered_chunks[number - 1]
+    @label ||= chunks.first&.label
   end
 
   def ordered_chunks
     return chunks unless persisted?
-    chunks.order(:number)
+    chunks.order(:id)
   end
 end

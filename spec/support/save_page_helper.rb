@@ -1,7 +1,7 @@
 module SavePageHelper
 
-  def create_page(gpid, chunk_number, chunk_content)
-    cmd = SavePageCommands::CreatePage.new(gpid, chunk_number, chunk_content)
+  def create_page(gpid, gcid, chunk_content)
+    cmd = SavePageCommands::CreatePage.new(gpid, gcid, chunk_content)
     cmd.run
     cmd.result.page
   end
@@ -12,8 +12,8 @@ module SavePageHelper
     cmd.result.chunk
   end
 
-  def add_chunk(gpid, chunk_number, chunk_content)
-    cmd = SavePageCommands::AddChunk.new(gpid, chunk_number, chunk_content)
+  def add_chunk(gpid, gcid, chunk_content)
+    cmd = SavePageCommands::AddChunk.new(gpid, gcid, chunk_content)
     cmd.run
     cmd.result.chunk
   end

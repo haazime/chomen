@@ -1,13 +1,12 @@
 module SavePageCommands
-  AddChunk = Struct.new(:gpid, :number, :content) do
+  AddChunk = Struct.new(:gpid, :gcid, :content) do
     include ResultRegisterable
 
     def run
-      chunk = Chunk.new(number: number, content: content)
       page = Page.find_by_gpid(gpid)
-      page.add_chunk(chunk)
+      page.add_chunk(gcid, content)
       page.save
-      register_result(page, chunk)
+      register_result(page, page.chunks.last)
     end
 
     def render(controller)

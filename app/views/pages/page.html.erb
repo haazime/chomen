@@ -1,9 +1,8 @@
-<% @page.ordered_chunks.each.with_index(1) do |chunk, n| -%>
-  <%= render partial: 'chunks/chunk', locals: { chunk: chunk, n: n } %>
+<% @page.ordered_chunks.each do |chunk| -%>
+  <%= render partial: 'chunks/chunk', locals: { chunk: chunk } %>
 <% end -%>
 <div>
-  <%= link_to '#', data: { chunk_adder: true, chunk_count: @page.ordered_chunks.size },
-      class: 'ui right floated basic mini circular icon button' do %>
+  <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder', class: 'ui right floated basic mini circular icon button' do %>
     <i class="plus icon"></i>
   <% end -%>
 </div>

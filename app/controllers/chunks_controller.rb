@@ -1,8 +1,8 @@
 class ChunksController < ApplicationController
 
   def new
-    base_chunk = Chunk.find_by_gcid(params[:base_gcid])
-    @chunk = PageFactory.new_chunk(base_chunk.gpid)
+    page = Page.find_by_gpid(params[:gpid])
+    @chunk = page.chunks.build
   end
 
   def destroy

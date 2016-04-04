@@ -21,6 +21,7 @@ describe 'create page', js: true do
       form.first('textarea').set('UPDATE')
       form.trigger('submit')
       wait_for_ajax
+      saved_page.chunks.reload
     end
 
     it { expect(saved_page.chunks.last.content).to eq('UPDATE') }

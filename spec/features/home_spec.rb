@@ -15,7 +15,7 @@ describe 'Home' do
       page1 = create_page('PAGE1', 1, 'CHUNK')
       page2 = create_page('PAGE2', 1, 'CHUNK')
 
-      update_chunk(page1.chunk(1).gcid, 'LAST UPDATE')
+      update_chunk(page1.chunks.first.gcid, 'LAST UPDATE')
 
       visit root_path
       expect(content).to have_content('LAST UPDATE')

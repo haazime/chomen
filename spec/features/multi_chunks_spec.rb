@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe 'multi chunks on page' do
   it do
-    page = create_page('GPID', 1, 'CHUNK1 INIT')
-    add_chunk(page.gpid, 2, 'CHUNK2')
-    add_chunk(page.gpid, 3, 'CHUNK3')
-    update_chunk(page.chunk(1).gcid, 'CHUNK1')
+    page = create_page('GPID', 'GCID1', 'CHUNK1 INIT')
+    add_chunk(page.gpid, 'GCID2', 'CHUNK2')
+    add_chunk(page.gpid, 'GCID3', 'CHUNK3')
+    update_chunk(page.chunks.first.gcid, 'CHUNK1')
 
     visit edit_page_path(gpid: page.gpid)
     chunk_contents = all('textarea.content').map(&:text)

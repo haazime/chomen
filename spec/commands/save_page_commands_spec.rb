@@ -6,33 +6,40 @@ describe SavePageCommands do
     let(:gcid) { 'GCID' }
     let(:content) { 'CONTENT' }
 
-    context 'when no page' do
-      it do
-        params = { gpid: gpid, gcid: '', number: 1, content: content }
-        command = described_class.detect(params)
-        expected_command = SavePageCommands::CreatePage.new(gpid, 1, content)
-        expect(command).to eq(expected_command)
-      end
-    end
-
-    context 'when page is exists' do
-      before { Page.create!(gpid: gpid) }
-
+    context 'when page = NOT exists, chunk = NOT exists' do
       it do
         params = { gpid: gpid, gcid: gcid, content: content }
         command = described_class.detect(params)
-        expected_command = SavePageCommands::UpdateChunk.new(gcid, content)
+        expected_command = SavePageCommands::CreatePage.new(gpid, gcid, content)
         expect(command).to eq(expected_command)
       end
     end
 
-    context 'when page and chunk are exist' do
-      before { Page.create!(gpid: gpid) }
+    let(:page) do
+      PageFactory.new_page.tap do |page|
+        page.chunks.first.content = content
+        page.save!
+      end
+    end
+
+    context 'when page = exists, chunk = exists' do
+      let(:chunk) { page.chunks.first }
 
       it do
-        params = { gpid: gpid, gcid: '', number: 2, content: content }
+        params = { gpid: page.gpid, gcid: chunk.gcid, content: content }
         command = described_class.detect(params)
-        expected_command = SavePageCommands::AddChunk.new(gpid, 2, content)
+        expected_command = SavePageCommands::UpdateChunk.new(chunk.gcid, content)
+        expect(command).to eq(expected_command)
+      end
+    end
+
+    context 'when page = exists, chunk = NOT exists' do
+      let(:new_chunk) { page.add_new_chunk }
+
+      it do
+        params = { gpid: page.gpid, gcid: new_chunk.gcid, content: content }
+        command = described_class.detect(params)
+        expected_command = SavePageCommands::AddChunk.new(page.gpid, new_chunk.gcid, content)
         expect(command).to eq(expected_command)
       end
     end

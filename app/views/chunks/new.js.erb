@@ -1,1 +1,2 @@
-$("<%=j render(partial: 'chunk/chunk' locals: { chunk: @chunk })%>")
+$('<%=j render(partial: 'chunks/chunk', locals: { chunk: @chunk }) %>')
+  .insertAfter($('.chunk-segment').last());

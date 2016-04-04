@@ -9,16 +9,8 @@ class PageFactory
   end
 
   def new_page
-    gpid = @gpid_generator.generate
-    chunk = Chunk.new(number: 1)
-    build_with_chunk(gpid, chunk)
-  end
-
-  private
-
-    def build_with_chunk(gpid, chunk)
-      Page.new(gpid: gpid) do |page|
-        page.chunks << chunk
-      end
+    Page.new(gpid: @gpid_generator.generate) do |page|
+      page.add_new_chunk
     end
+  end
 end
