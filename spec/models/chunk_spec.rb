@@ -5,7 +5,7 @@ describe Chunk do
     context 'page = 1, chunk = 1' do
       it do
         page = create_page('GPID', 1, 'CHUNK1')
-        chunk = page.chunk(1)
+        chunk = page.chunks.first
         chunk.destroy_with_page
 
         aggregate_failures do
@@ -19,8 +19,7 @@ describe Chunk do
       it do
         page = create_page('GPID', 1, 'CHUNK1')
         add_chunk(page.gpid, 2, 'CHUNK2')
-        chunk1 = page.chunk(1)
-        chunk2 = page.chunk(2)
+        chunk1, chunk2 = page.chunks
 
         chunk1.destroy_with_page
 
