@@ -8,3 +8,7 @@
 html.turbolinks-progress-bar::before {
   background-color: grey !important;
 }
+
+body {
+  margin-top: calc(#{$navbar-height} + 1.0rem);
+}
