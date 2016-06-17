@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'add chunk', js: true do
+xdescribe 'add chunk', js: true do
   before { visit edit_page_path(gpid: saved_page.gpid) }
   let(:saved_page) { create_page('GPID', 'GCID1', 'CHUNK1') }
 
