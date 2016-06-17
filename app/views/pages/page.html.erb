@@ -1,8 +1,8 @@
 <% @page.ordered_chunks.each do |chunk| -%>
   <%= render partial: 'chunks/chunk', locals: { chunk: chunk } %>
 <% end -%>
-<div>
-  <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder', class: 'ui right floated basic mini circular icon button' do %>
-    <i class="plus icon"></i>
+<div class="btn-toolbar">
+  <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder', class: 'btn button' do %>
+    <%= fa_icon('plus-circle') %>
   <% end -%>
 </div>

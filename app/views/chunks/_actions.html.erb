@@ -1,6 +1,5 @@
 <% if chunk.persisted? -%>
-  <%= link_to chunk_url(chunk), method: :delete, data: { confirm: 'DELETE CHUNK Are you sure?' },
-    class: 'ui basic mini circular icon button delete-chunk' do %>
-    <i class="arrow trash icon"></i>
+  <%= link_to chunk_url(chunk), method: :delete, data: { confirm: 'DELETE CHUNK Are you sure?' }, class: 'btn button delete-chunk' do %>
+    <%= fa_icon(:trash) %>
   <% end -%>
 <% end -%>

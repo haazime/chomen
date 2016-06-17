@@ -5,7 +5,7 @@ module UIHelper
   end
 
   def chunk_form(num)
-    all('.chunk-form')[num - 1]
+    all('form')[num - 1]
   end
 
   def chunk_content(num)
