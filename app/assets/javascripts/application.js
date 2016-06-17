@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require semantic-ui
+//= require bootstrap-sprockets
 //= require autosize
 //= require turbolinks
 //= require_tree .
