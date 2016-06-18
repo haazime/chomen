@@ -1,0 +1,13 @@
+var notifierDelay = <%= Rails.env == 'test' ? 100 : 800 %>;
+
+var createNotice = function(message) {
+  return '<span class="indicator">' + message + '</span>';
+}
+
+var notifyForChunk = function(gcid, message) {
+  $(createNotice(message))
+    .prependTo('#' + gcid)
+    .fadeIn('fast')
+    .delay(notifierDelay)
+    .fadeOut('fast', function() { $(this).remove() });
+};

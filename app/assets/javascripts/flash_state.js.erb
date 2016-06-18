@@ -1,6 +1,0 @@
-var stateTimeoutDelay = <%= Rails.env == 'test' ? 100 : 1500 %>;
-var showState = function() {
-  toastr.options.timeOut = stateTimeoutDelay;
-  toastr.options.hideDuration = 200;
-  toastr.success('Saved');
-}

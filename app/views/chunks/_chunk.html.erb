@@ -1,5 +1,5 @@
 <%= react_component(
   'ChunkBox',
   chunk.attributes.merge(gpid: page.gpid, url: pages_url),
-  { id: chunk.gcid }
+  { id: chunk.gcid, class: 'chunk-segment' }
 ) %>

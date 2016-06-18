@@ -24,12 +24,8 @@ class PagesController < ApplicationController
     command.render(self)
   end
 
-  def render_for_create_page(result)
-    render :create, locals: { chunk: result.chunk }
-  end
-
-  def render_for_update_chunk(result)
-    render :update, locals: { chunk: result.chunk }
+  def render_for_save(result)
+    render :save, locals: { chunk: result.chunk }
   end
 
   private
