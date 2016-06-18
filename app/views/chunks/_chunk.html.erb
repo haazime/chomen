@@ -1,8 +1,4 @@
 <div id="chunk-segment-<%= chunk.gcid %>" class="chunk-segment">
   <%= render partial: 'chunks/form', locals: { chunk: chunk } %>
-  <div class="btn-toolbar">
-    <div class="btn-group">
-      <%= render partial: 'chunks/actions', locals: { chunk: chunk } %>
-    </div>
-  </div>
+  <%= render partial: 'chunks/actions', locals: { chunk: chunk } %>
 </div>

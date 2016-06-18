@@ -15,6 +15,9 @@
 //= require bootstrap-sprockets
 //= require autosize
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 Turbolinks.enableProgressBar();
