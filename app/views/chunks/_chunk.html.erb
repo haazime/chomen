@@ -1,4 +1,5 @@
-<div id="chunk-segment-<%= chunk.gcid %>" class="chunk-segment">
-  <%= render partial: 'chunks/form', locals: { chunk: chunk } %>
-  <%= render partial: 'chunks/actions', locals: { chunk: chunk } %>
-</div>
+<%= react_component(
+  'ChunkBox',
+  chunk.attributes.merge(gpid: page.gpid, url: pages_url),
+  { id: chunk.gcid }
+) %>

@@ -1,11 +1,14 @@
 class ChunkTextInput extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
-      value: this.props.content,
-      timeoutId: null,
+      value: this.props.content || '',
+      timeoutId: undefined,
     }
+  }
+
+  componentDidMount() {
+    ReactDOM.findDOMNode(this.refs.textarea).focus()
   }
 
   handleChange(e) {
@@ -17,18 +20,22 @@ class ChunkTextInput extends React.Component {
     if (this.state.timeoutId) {
       clearTimeout(this.state.timeoutId)
     }
+
     const timeoutId = setTimeout(() => {
-      console.log('save!', this.state.value)
+      this.props.onSave(this.state.value)
     }, 2000)
+
     this.setState({ timeoutId: timeoutId })
   }
 
   render() {
     const value = this.state.value
-
+    const rows = value.split("\n").length
     return (
       <textarea
-        className='form-control content'
+        ref='textarea'
+        className='form-control'
+        rows={rows}
         value={value}
         onChange={this.handleChange.bind(this)}
       />

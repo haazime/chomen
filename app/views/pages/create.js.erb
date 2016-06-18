@@ -1,7 +1,5 @@
-$('#page-list').replaceWith("<%=j render(partial: 'pages/list', locals: { pages: @pages }) %>");
-$('#page-count').text(<%= @pages.size %>);
-
-$('#chunk-segment-<%= chunk.gcid %> .chunk-actions')
-  .html("<%=j render(partial: 'chunks/actions', locals: { chunk: chunk }) %>");
-
-showState();
+$('#<%= chunk.gcid %>').replaceWith(
+  "<%=j render(partial: 'chunks/chunk', locals: { page: chunk.page, chunk: chunk }) %>"
+)
+ReactRailsUJS.mountComponents()
+console.log('create!')

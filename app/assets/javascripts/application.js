@@ -24,7 +24,7 @@ Turbolinks.enableProgressBar();
 
 autoSaveHandler();
 
-$(document).on('ready page:change', function() {
+$(document).on('ready page:change page:partial-load', function() {
   pageListHandler();
   autosize($('textarea.content'));
 });

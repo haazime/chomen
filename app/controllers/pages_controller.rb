@@ -19,7 +19,7 @@ class PagesController < ApplicationController
   end
 
   def save
-    command = SavePageCommands.detect(params[:chunk])
+    command = SavePageCommands.detect(params)
     command.run
     command.render(self)
   end

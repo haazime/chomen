@@ -1,5 +1,5 @@
 <% @page.ordered_chunks.each do |chunk| -%>
-  <%= react_component 'ChunkBox', chunk.attributes %>
+  <%= render partial: 'chunks/chunk', locals: { page: @page, chunk: chunk } %>
 <% end -%>
 <div class="btn-toolbar">
   <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder', class: 'btn button' do %>
