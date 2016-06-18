@@ -1,7 +1,7 @@
-var notifierDelay = <%= Rails.env == 'test' ? 100 : 800 %>;
+var notifierDelay = <%= Rails.env == 'test' ? 100 : 1500 %>;
 
 var createNotice = function(message) {
-  return '<span class="indicator">' + message + '</span>';
+  return '<div class="indicator">' + message + '</div>';
 }
 
 var notifyForChunk = function(gcid, message) {

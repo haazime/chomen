@@ -1,5 +1,5 @@
 .chunk-segment {
-  @include box-shadow(0 0px 1px rgba(0,0,0,.3));
+  @include box-shadow(0 0px 1px rgba(0,0,0,.5));
   @include radius();
 
   border-radius: 3px;
