@@ -1,23 +1,20 @@
 class ChunkBox extends React.Component {
-  render() {
-    const { gpid, gcid, content, url } = this.props
-
-    const onSave = (content) => {
-      const data = {
-        gpid: gpid || '',
-        gcid: gcid,
-        content: content
-      }
-      $.ajax({ type: 'POST', url: url, data: data })
+  saveContent(content) {
+    const { gpid, gcid, url } = this.props
+    const data = {
+      gpid: gpid || '',
+      gcid: gcid,
+      content: content
     }
+    $.ajax({ type: 'POST', url: url, data: data })
+  }
 
+  render() {
     return (
       <div className='chunk-segment'>
         <ChunkTextInput
-          gpid={gpid}
-          gcid={gcid}
-          content={content}
-          onSave={onSave}
+          content={this.props.content}
+          onSave={this.saveContent.bind(this)}
         />
       </div>
     )
