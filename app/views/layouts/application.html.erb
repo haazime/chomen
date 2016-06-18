@@ -12,13 +12,8 @@
   <%= render 'layouts/navigation' %>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
-        <%= render partial: 'pages/list', locals: { pages: @pages } %>
-      </div>
-      <div class="col-md-9">
-        <div class="column main">
-          <%= yield %>
-        </div>
+      <div class="col-md-8 col-md-offset-2">
+        <%= yield %>
       </div>
     </div>
   </div>

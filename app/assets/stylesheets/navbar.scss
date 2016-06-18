@@ -1,0 +1,6 @@
+.navbar-container {
+  @extend .container;
+  @include flex;
+  -webkit-justify-content: space-between;
+  justify-container: space-between;
+}

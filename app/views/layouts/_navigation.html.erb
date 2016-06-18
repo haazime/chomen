@@ -1,19 +1,14 @@
 <div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="navbar-container">
+    <ul class="nav navbar-nav">
+      <%= render partial: 'pages/list', locals: { pages: @pages } %>
+    </ul>
     <div class="navbar-header">
-      <%= link_to '/', class: 'navbar-brand' do -%>
-        <div class="brand-logo">Chomen</div>
+      <%= link_to new_page_url, class: 'navbar-brand' do -%>
+        <%= fa_icon('file-o') %>
       <% end -%>
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
     </div>
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Write', new_page_url %></li>
-      </ul>
-    </div>
+    <ul class="nav navbar-nav">
+    </ul>
   </div>
 </div>
