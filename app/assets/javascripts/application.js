@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require autosize
 //= require turbolinks
 //= require react
 //= require react_ujs
@@ -21,10 +20,3 @@
 //= require_tree .
 
 Turbolinks.enableProgressBar();
-
-autoSaveHandler();
-
-$(document).on('ready page:change page:partial-load', function() {
-  pageListHandler();
-  autosize($('textarea.content'));
-});
