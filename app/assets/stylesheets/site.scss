@@ -1,4 +1,4 @@
-.chunk-segment {
+.chunk-box {
   @include box-shadow(0 0px 1px rgba(0,0,0,.5));
   @include radius();
 
@@ -7,7 +7,7 @@
   margin-bottom: 1.5rem;
 }
 
-.chunk-segment > .indicator {
+.chunk-box > .indicator {
   @include radius();
   opacity: 0.8;
 
