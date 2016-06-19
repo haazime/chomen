@@ -1,7 +1,0 @@
-<div class="chunk-actions">
-  <% if chunk.persisted? -%>
-    <%= link_to chunk_url(chunk), method: :delete, data: { confirm: 'DELETE CHUNK Are you sure?' }, class: 'delete-chunk' do %>
-      <%= fa_icon(:trash) %>
-    <% end -%>
-  <% end -%>
-</div>
