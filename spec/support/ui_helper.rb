@@ -15,3 +15,7 @@ module UIHelper
     find('#chunk-adder')
   end
 end
+
+RSpec.configure do |config|
+  config.include UIHelper, type: :feature
+end

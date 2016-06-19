@@ -18,3 +18,7 @@ module SavePageHelper
     cmd.result.chunk
   end
 end
+
+RSpec.configure do |config|
+  config.include SavePageHelper
+end

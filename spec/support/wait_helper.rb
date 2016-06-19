@@ -10,3 +10,7 @@ module WaitHelper
     page.evaluate_script('jQuery.active').zero?
   end
 end
+
+RSpec.configure do |config|
+  config.include WaitHelper, type: :feature
+end
