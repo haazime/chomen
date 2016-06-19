@@ -4,46 +4,45 @@
 
   border-radius: 3px;
   padding: 0;
-  margin-bottom: 2.0rem;
+  margin-bottom: 3.0rem;
 }
 
+$padding-left: 1.5rem;
+
 .chunk-body {
-  padding: 1.5rem 2.0rem;
+  padding: 1.5rem $padding-left;
 }
 
 .chunk-actions {
   @include flex();
-
   -webkit-align-items: center;
   align-items: center;
-  -webkit-flex-direction: row-reverse;
-  flex-direction: row-reverse;
 
-  padding: 5px 1.5rem;
-
+  padding: 5px $padding-left;
   border-bottom: 1px solid $border-color;
 }
 
+$chunk-action-color: darken($gray-lighter, 3%);
+
+.chunk-point {
+  color: $chunk-action-color;
+}
+
+.chunk-remover {
+  color: $chunk-action-color;
+  margin-right: 5px;
+
+  &:hover {
+    color: $brand-danger;
+  }
+}
+
 .chunk-indicator {
-  margin-right: auto;
+  margin-left: auto;
 
   height: 18px;
   line-height: 18px;
 
   color: $brand-success;
   font-size: 14px;
-}
-
-.chunk-remover {
-  display: block;
-
-  height: 18px;
-  line-height: 18px;
-
-  color: darken($gray-lighter, 3%);
-  margin-left: 1.5rem;
-
-  &:hover {
-    color: $brand-danger;
-  }
 }

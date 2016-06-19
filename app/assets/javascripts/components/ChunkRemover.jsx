@@ -12,12 +12,16 @@ class ChunkRemover extends React.Component {
     )
   }
 
+  renderPoint() {
+    return <span><i className='fa fa-circle-thin chunk-point' /></span>
+  }
+
   render() {
     const { url } = this.props
     if (url) {
       return this.renderLink(url)
     } else {
-      return <span />
+      return this.renderPoint()
     }
   }
 }
