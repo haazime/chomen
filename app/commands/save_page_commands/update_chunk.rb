@@ -9,7 +9,7 @@ module SavePageCommands
     end
 
     def render(controller)
-      controller.render_for_update_chunk(result)
+      controller.render_for_save(result)
     end
   end
 end

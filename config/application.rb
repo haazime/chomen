@@ -31,5 +31,9 @@ module Chomen
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # react rails
+    config.react.addons = true
+    config.react.camelize_props = true
   end
 end

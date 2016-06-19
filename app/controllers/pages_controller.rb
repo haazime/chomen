@@ -19,28 +19,18 @@ class PagesController < ApplicationController
   end
 
   def save
-    command = SavePageCommands.detect(params[:chunk])
+    command = SavePageCommands.detect(params)
     command.run
     command.render(self)
   end
 
-  def render_for_create_page(result)
-    render :create, locals: { chunk: result.chunk }
-  end
-
-  def render_for_update_chunk(result)
-    render :update, locals: { chunk: result.chunk }
+  def render_for_save(result)
+    @chunk = result.chunk
+    @page = @chunk.page.reload
+    render :save
   end
 
   private
-
-    def set_pages
-      @pages = Page.sorted_by_update
-    end
-
-    def require_page
-      render_404 unless page
-    end
 
     def page(gpid = params[:gpid])
       @__page ||= Page.find_by_gpid(gpid)

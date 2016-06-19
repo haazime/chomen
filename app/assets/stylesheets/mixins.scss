@@ -1,0 +1,13 @@
+@mixin flex() {
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin radius() {
+  border-radius: 3px;
+}
+
+@mixin box() {
+  @include box-shadow(0 0px 1px rgba(0,0,0,.4));
+  @include radius();
+}

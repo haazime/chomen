@@ -52,3 +52,6 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+gem 'react-rails'

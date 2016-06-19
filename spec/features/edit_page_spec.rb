@@ -1,20 +1,20 @@
 require 'rails_helper'
 
-describe 'edit page' do
-  before { visit edit_page_path(gpid: saved_page.gpid) }
+describe 'edit page', js: true do
+  before do
+    visit edit_page_path(gpid: saved_page.gpid)
+  end
 
   let(:saved_page) { create_page('GPID', 1, 'CREATE') }
-  let(:form) { chunk_form(1) }
 
   describe 'saved content' do
-    let(:content) { form.first('textarea').value }
+    let(:content) { chunk_input(0).text }
     it { expect(content).to have_content('CREATE') }
   end
 
-  describe 'update content', js: true do
+  describe 'update content' do
     before do
-      form.first('textarea').set('UPDATED')
-      form.trigger('submit')
+      chunk_input(0).set('UPDATED')
       wait_for_ajax
     end
 

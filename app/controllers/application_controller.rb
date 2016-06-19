@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    def set_pages
+      @pages = Page.sorted_by_update
+    end
+
+    def require_page
+      render_404 unless page
+    end
+
     def render_404
       render file: 'public/404.html', status: :not_found, layout: false
     end

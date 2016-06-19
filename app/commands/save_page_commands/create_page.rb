@@ -10,7 +10,7 @@ module SavePageCommands
     end
 
     def render(controller)
-      controller.render_for_create_page(result)
+      controller.render_for_save(result)
     end
   end
 end

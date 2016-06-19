@@ -14,4 +14,19 @@ describe Page do
       end
     end
   end
+
+  describe '#ordered_chunks' do
+    it do
+      page = Page.new(gpid: 'GPID')
+      page.add_chunk('GCID1', 'chunk1')
+      page.save
+      page.add_new_chunk
+      ordered_chunks = page.ordered_chunks
+
+      aggregate_failures do
+        expect(ordered_chunks.size).to eq(2)
+        expect(ordered_chunks.first.gcid).to eq('GCID1')
+      end
+    end
+  end
 end

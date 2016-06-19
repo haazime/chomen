@@ -1,6 +1,5 @@
-<div id="chunk-segment-<%= chunk.gcid %>" class="ui segment chunk-segment">
-  <%= render partial: 'chunks/form', locals: { chunk: chunk } %>
-  <div class="chunk-actions">
-    <%= render partial: 'chunks/actions', locals: { chunk: chunk } %>
-  </div>
-</div>
+<%= react_component(
+  'ChunkBox',
+  chunk_component_props(chunk),
+  { id: chunk.gcid, class: 'chunk-box' }
+) %>

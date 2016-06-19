@@ -17,7 +17,11 @@ class Page < ActiveRecord::Base
   end
 
   def add_chunk(gcid, content)
-    self.chunks.build(gcid: gcid, content: content)
+    self.chunks.build(
+      gcid: gcid,
+      content: content,
+      created_at: Time.current
+    )
   end
 
   def destroy_from_chunk(chunk_id)
@@ -34,6 +38,6 @@ class Page < ActiveRecord::Base
 
   def ordered_chunks
     return chunks unless persisted?
-    chunks.order(:id)
+    chunks.sort_by(&:created_at)
   end
 end

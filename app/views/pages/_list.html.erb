@@ -1,17 +1,3 @@
-<div id="page-list" class="ui sidebar vertical menu">
-  <div class="ui list">
-    <% if pages.empty? -%>
-      <div class="item">No pages</div>
-    <% else -%>
-      <% pages.each do |p| -%>
-        <a class="item" href="<%= edit_page_url(gpid: p.gpid) %>">
-          <i class="large right triangle icon"></i>
-          <div class="content">
-            <div class="header"><%= p.label %></div>
-            <div class="description"><%= l(p.updated_at, format: :default) %></div>
-          </div>
-        </a>
-      <% end -%>
-    <% end -%>
-  </div>
-</div>
+<% pages.each do |p| -%>
+  <li><%= link_to p.label, edit_page_url(gpid: p.gpid) %></li>
+<% end -%>

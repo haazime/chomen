@@ -12,16 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require semantic-ui
-//= require autosize
+//= require bootstrap-sprockets
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 Turbolinks.enableProgressBar();
-
-autoSaveHandler();
-
-$(document).on('ready page:change', function() {
-  pageListHandler();
-  autosize($('textarea.content'));
-});
