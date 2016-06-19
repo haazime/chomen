@@ -13,6 +13,7 @@ $gray-dark:              #444 !default;
 $gray:                   #777 !default;
 $gray-light:             #8e8e8e !default;
 $gray-lighter:           #ddd !default;
+$gray-nav:               lighten($gray-light, 11%);
 
 $brand-primary:         #D6BA73 !default;
 $brand-success:         #8BBF9F !default;
@@ -20,7 +21,7 @@ $brand-info:            #6699CC !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
-$border-color: lighten($gray-lighter, 3%);
+$border-color: #e7e7e7;
 
 //== Scaffolding
 //
@@ -370,7 +371,7 @@ $navbar-default-bg:                #fff !default;
 $navbar-default-border:            darken($navbar-default-bg, 9.5%) !default;
 
 // Navbar links
-$navbar-default-link-color:                $gray-light !default;
+$navbar-default-link-color:                $gray-nav !default;
 $navbar-default-link-hover-color:          $brand-primary !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         $navbar-default-link-hover-color !default;

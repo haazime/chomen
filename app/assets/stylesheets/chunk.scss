@@ -1,8 +1,5 @@
 .chunk-box {
-  @include box-shadow(0 0px 1px rgba(0,0,0,.5));
-  @include radius();
-
-  border-radius: 3px;
+  @include box;
   padding: 0;
   margin-bottom: 3.0rem;
 }
@@ -22,7 +19,7 @@ $padding-left: 1.5rem;
   border-bottom: 1px solid $border-color;
 }
 
-$chunk-action-color: darken($gray-lighter, 3%);
+$chunk-action-color: lighten($gray-nav, 5%);
 
 .chunk-point {
   color: $chunk-action-color;
