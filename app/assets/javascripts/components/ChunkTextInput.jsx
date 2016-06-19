@@ -32,13 +32,15 @@ class ChunkTextInput extends React.Component {
     const value = this.state.value
     const rows = value.split("\n").length
     return (
-      <textarea
-        ref='textarea'
-        className='form-control'
-        rows={rows}
-        value={value}
-        onChange={this.handleChange.bind(this)}
-      />
+      <div className='chunk-body'>
+        <textarea
+          ref='textarea'
+          className='form-control'
+          rows={rows}
+          value={value}
+          onChange={this.handleChange.bind(this)}
+        />
+      </div>
     )
   }
 }

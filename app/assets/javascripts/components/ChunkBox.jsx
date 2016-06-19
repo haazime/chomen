@@ -11,10 +11,13 @@ class ChunkBox extends React.Component {
 
   render() {
     return (
-      <ChunkTextInput
-        content={this.props.content}
-        onSave={this.saveContent.bind(this)}
-      />
+      <div>
+        <ChunkActions isSaved={this.props.isSaved} />
+        <ChunkTextInput
+          content={this.props.content}
+          onSave={this.saveContent.bind(this)}
+        />
+      </div>
     )
   }
 }
