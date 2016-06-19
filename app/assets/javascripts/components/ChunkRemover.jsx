@@ -7,7 +7,7 @@ class ChunkRemover extends React.Component {
         data-confirm='*DELETE this chunk* Are you sure?'
         className='chunk-remover'
       >
-        <i className='fa fa-circle-thin' />
+        <i className='fa fa-minus-circle' />
       </a>
     )
   }

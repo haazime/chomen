@@ -41,6 +41,10 @@ $border-color: lighten($gray-lighter, 3%);
   height: 18px;
   line-height: 18px;
 
-  color: $gray-light;
+  color: darken($gray-lighter, 3%);
   margin-left: 1.5rem;
+
+  &:hover {
+    color: $brand-danger;
+  }
 }
