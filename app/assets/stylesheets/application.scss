@@ -10,6 +10,10 @@ html.turbolinks-progress-bar::before {
   background-color: $brand-success !important;
 }
 
+.navbar-brand {
+  font-size: 18px !important;
+}
+
 body {
   margin-top: calc(#{$navbar-height} + 3.0rem);
 }
