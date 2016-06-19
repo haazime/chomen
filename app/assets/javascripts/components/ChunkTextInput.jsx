@@ -38,6 +38,7 @@ class ChunkTextInput extends React.Component {
         <textarea
           ref='textarea'
           className='form-control'
+          style={{fontSize: '1.7rem'}}
           rows={rows}
           value={value}
           onChange={this.handleChange.bind(this)}
