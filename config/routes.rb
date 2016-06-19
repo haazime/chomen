@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post    '/pages',       to: 'pages#save',     as: :pages
   get     '/pages/:gpid', to: 'pages#edit',     as: :edit_page
 
-  resources :chunks
+  resources :chunks, only: [:new, :destroy]
 
   root 'pages#index'
 end
