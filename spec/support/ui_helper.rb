@@ -6,6 +6,10 @@ module UIHelper
   def chunk_remover(i)
     all('.chunk-remover')[i]
   end
+
+  def chunk_adder
+    first('#chunk-adder')
+  end
 #  def chunk_segment(num)
 #    chunk_segments[num - 1]
 #  end
