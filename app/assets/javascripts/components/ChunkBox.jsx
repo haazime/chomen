@@ -15,6 +15,7 @@ class ChunkBox extends React.Component {
         <ChunkActions isSaved={this.props.isSaved} />
         <ChunkTextInput
           content={this.props.content}
+          saveDelay={this.props.saveDelay}
           onSave={this.saveContent.bind(this)}
         />
       </div>

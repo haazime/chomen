@@ -23,7 +23,7 @@ class ChunkTextInput extends React.Component {
 
     const timeoutId = setTimeout(() => {
       this.props.onSave(this.state.value)
-    }, 2000)
+    }, this.props.saveDelay)
 
     this.setState({ timeoutId: timeoutId })
   }
