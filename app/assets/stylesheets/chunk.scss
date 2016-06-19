@@ -15,11 +15,19 @@ $padding-left: 1.5rem;
   -webkit-align-items: center;
   align-items: center;
 
-  padding: 5px $padding-left;
+  $vertical-space: 5px;
+  $font-size: 18px;
+  $height: $font-size + $vertical-space * 2;
+
+  padding: $vertical-space $padding-left;
   border-bottom: 1px solid $border-color;
+
+  font-size: $font-size;
+  height: $height;
+  line-height: $height;
 }
 
-$chunk-action-color: lighten($gray-nav, 5%);
+$chunk-action-color: lighten($gray-nav, 7%);
 
 .chunk-point {
   color: $chunk-action-color;
@@ -37,9 +45,6 @@ $chunk-action-color: lighten($gray-nav, 5%);
 .chunk-indicator {
   margin-left: auto;
 
-  height: 18px;
-  line-height: 18px;
-
   color: $brand-success;
-  font-size: 14px;
+  font-size: 15px;
 }
