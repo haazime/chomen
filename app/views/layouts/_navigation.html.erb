@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= fa_icon('list-alt lg') %>
+            <%= fa_icon('list-alt 2x') %>
           </a>
           <ul id="page-list" class="dropdown-menu">
             <%= render partial: 'pages/list', locals: { pages: @pages } %>
@@ -21,12 +21,12 @@
         </li>
         <li>
           <%= link_to new_page_url do %>
-            <%= fa_icon('pencil-square-o lg') %>
+            <%= fa_icon('pencil-square-o 2x') %>
           <% end -%>
         </li>
         <li>
           <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder' do %>
-            <%= fa_icon('plus-circle lg') %>
+            <%= fa_icon('plus-circle 2x') %>
           <% end -%>
         </li>
       </ul>

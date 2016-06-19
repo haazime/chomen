@@ -13,7 +13,7 @@ $gray-dark:              #444 !default;
 $gray:                   #777 !default;
 $gray-light:             #8e8e8e !default;
 $gray-lighter:           #ddd !default;
-$gray-nav:               lighten($gray-light, 11%);
+$gray-nav:               lighten($gray-light, 25%);
 
 $brand-primary:         #8BBF9F !default;
 $brand-success:         #8BBF9F !default;
@@ -344,14 +344,13 @@ $container-tablet:             (720px + $grid-gutter-width) !default;
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-//$container-desktop:            (940px + $grid-gutter-width) !default;
-$container-desktop:            (720px + $grid-gutter-width) !default;
+$container-desktop:            (940px + $grid-gutter-width) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
 //$container-large-desktop:      (1140px + $grid-gutter-width) !default;
-$container-large-desktop:      (720px + $grid-gutter-width) !default;
+$container-large-desktop:          (940px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
 
@@ -362,7 +361,7 @@ $container-lg:                 $container-large-desktop !default;
 
 // Basics of a navbar
 //$navbar-height:                    40px !default;
-$navbar-height:                    60px !default;
+$navbar-height:                    50px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 //$navbar-border-radius:             $border-radius-base !default;
 $navbar-border-radius:             0 !default;
@@ -425,7 +424,6 @@ $navbar-inverse-toggle-border-color:        darken($navbar-inverse-bg, 10%) !def
 //##
 
 //=== Shared nav styles
-//$nav-link-padding:                          10px 15px !default;
 $nav-link-padding:                          10px 15px !default;
 $nav-link-hover-bg:                         $gray-lighter !default;
 
