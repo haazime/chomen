@@ -1,4 +1,4 @@
-$('#<%= chunk.gcid %>')
-  .replaceWith("<%=j render(partial: 'chunks/chunk', locals: { page: chunk.page, chunk: chunk }) %>")
+$('#page-list-outer')
+  .replaceWith("<%=j render(partial: 'chunks/list', locals: { chunks: @page.ordered_chunks }) %>")
 ReactRailsUJS.mountComponents()
-notifyForChunk('<%= chunk.gcid %>')
+notifyForChunk('<%= @chunk.gcid %>')

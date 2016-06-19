@@ -8,7 +8,7 @@ module UIHelper
   end
 
   def chunk_adder
-    first('#chunk-adder')
+    find('#chunk-adder')
   end
 #  def chunk_segment(num)
 #    chunk_segments[num - 1]

@@ -1,1 +1,3 @@
-$('<%=j render(partial: 'chunks/chunk', locals: { chunk: @chunk }) %>').insertAfter($('.chunk-segment').last());
+$('#chunk-list-outer')
+  .replaceWith("<%=j render(partial: 'chunks/list', locals: { chunks: @page.ordered_chunks }) %>")
+ReactRailsUJS.mountComponents()

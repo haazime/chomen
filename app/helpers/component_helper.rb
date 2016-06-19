@@ -1,4 +1,8 @@
 module ComponentHelper
+  def chunk_list_component_props(chunks)
+    { chunks: chunks.map { |c| chunk_component_props(c) } }
+  end
+
   def chunk_component_props(chunk)
     chunk.attributes.merge(
       gpid: chunk.gpid,
