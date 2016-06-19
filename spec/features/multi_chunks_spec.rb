@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'multi chunks on page' do
+xdescribe 'multi chunks on page' do
   it do
     page = create_page('GPID', 'GCID1', 'CHUNK1 INIT')
     add_chunk(page.gpid, 'GCID2', 'CHUNK2')
