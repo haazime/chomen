@@ -11,7 +11,12 @@
     <div class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <%= render partial: 'pages/list', locals: { pages: @pages } %>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <%= fa_icon('list-alt') %>
+          </a>
+          <ul id="page-list" class="dropdown-menu">
+            <%= render partial: 'pages/list', locals: { pages: @pages } %>
+          </ul>
         </li>
         <li>
           <%= link_to new_page_url do %>

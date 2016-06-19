@@ -1,3 +1,5 @@
+$('#page-list')
+  .html("<%=j render(partial: 'list', locals: { pages: @pages }) %>")
 $('#chunk-list-outer')
   .replaceWith("<%=j render(partial: 'chunks/list', locals: { chunks: @page.ordered_chunks }) %>")
 ReactRailsUJS.mountComponents()
