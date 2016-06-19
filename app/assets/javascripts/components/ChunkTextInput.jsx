@@ -8,7 +8,9 @@ class ChunkTextInput extends React.Component {
   }
 
   componentDidMount() {
-    ReactDOM.findDOMNode(this.refs.textarea).focus()
+    if (this.props.isActive) {
+      ReactDOM.findDOMNode(this.refs.textarea).focus()
+    }
   }
 
   handleChange(e) {

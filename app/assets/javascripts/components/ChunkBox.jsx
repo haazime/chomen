@@ -10,11 +10,19 @@ class ChunkBox extends React.Component {
   }
 
   render() {
-    const { gcid, content, saveDelay, destroyUrl } = this.props
+    const {
+      isActive,
+      gcid,
+      content,
+      saveDelay,
+      destroyUrl
+    } = this.props
+
     return (
       <div id={gcid} className='chunk-box'>
         <ChunkActions destroyUrl={destroyUrl} />
         <ChunkTextInput
+          isActive={isActive}
           content={content}
           saveDelay={saveDelay}
           onSave={this.saveContent.bind(this)}
