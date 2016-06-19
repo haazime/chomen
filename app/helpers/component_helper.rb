@@ -4,7 +4,7 @@ module ComponentHelper
       gpid: chunk.gpid,
       url: pages_url,
       is_saved: chunk.persisted?,
-      save_delay: Rails.env == 'test' ? 10 : 2500
+      save_delay: Rails.env == 'test' ? 1 : 2500
     )
   end
 end

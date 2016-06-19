@@ -1,4 +1,7 @@
 module UIHelper
+  def chunk_input(i)
+    all('textarea')[i]
+  end
 
   def chunk_segment(num)
     chunk_segments[num - 1]
