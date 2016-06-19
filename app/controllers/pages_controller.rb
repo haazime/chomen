@@ -26,7 +26,7 @@ class PagesController < ApplicationController
 
   def render_for_save(result)
     @chunk = result.chunk
-    @page = @chunk.page
+    @page = @chunk.page.reload
     render :save
   end
 

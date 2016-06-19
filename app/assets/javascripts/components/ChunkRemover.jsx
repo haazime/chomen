@@ -1,8 +1,8 @@
 class ChunkRemover extends React.Component {
-  render() {
+  renderLink(url) {
     return (
       <a
-        href={this.props.url}
+        href={url}
         data-method='delete'
         data-confirm='*DELETE this chunk* Are you sure?'
         className='chunk-remover'
@@ -10,5 +10,14 @@ class ChunkRemover extends React.Component {
         <i className='fa fa-minus-circle' />
       </a>
     )
+  }
+
+  render() {
+    const { url } = this.props
+    if (url) {
+      return this.renderLink(url)
+    } else {
+      return <span />
+    }
   }
 }
