@@ -8,31 +8,39 @@ $border-color: lighten($gray-lighter, 3%);
   padding: 0;
 }
 
-.chunk-actions {
-  background-color: lighten($gray-lighter, 10%);
-  padding: 0.5rem 1.5rem;
-  border-bottom: 1px solid $border-color;
-  text-align: right;
-
-  i {
-    color: $gray-light;
-  }
-}
-
 .chunk-body {
   padding: 1.5rem 2.0rem;
 }
 
-.indicator {
-  @include radius();
-  opacity: 0.8;
+.chunk-actions {
+  @include flex();
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 
-  position: absolute;
-  top: -1.0rem;
-  right: 0;
+  padding: 5px 1.5rem;
 
-  padding: 0.5rem 1.5rem;
+  background-color: lighten($gray-lighter, 10%);
+  border-bottom: 1px solid $border-color;
+}
 
-  background-color: $brand-success;
-  color: #fff;
+.chunk-indicator {
+  margin-right: auto;
+
+  height: 18px;
+  line-height: 18px;
+
+  color: $brand-success;
+  font-size: 14px;
+}
+
+.chunk-remover {
+  display: block;
+
+  height: 18px;
+  line-height: 18px;
+
+  color: $gray-light;
+  margin-left: 1.5rem;
 }

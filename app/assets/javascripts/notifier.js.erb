@@ -1,13 +1,9 @@
-var notifierDelay = <%= Rails.env == 'test' ? 100 : 1500 %>;
-
-var createNotice = function(message) {
-  return '<div class="indicator">' + message + '</div>';
-}
+var notifierDelay = <%= Rails.env == 'test' ? 100 : 1200 %>;
 
 var notifyForChunk = function(gcid, message) {
-  $(createNotice(message))
-    .prependTo('#' + gcid)
-    .fadeIn('fast')
+  $('#' + gcid + ' .chunk-indicator')
+    .show()
+    .fadeIn('slow')
     .delay(notifierDelay)
-    .fadeOut('fast', function() { $(this).remove() });
+    .fadeOut('fast', function() { $(this).hide() });
 };
