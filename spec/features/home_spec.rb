@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'Home' do
-  let(:content) { chunk_form(1).first('textarea').text }
+describe 'Home', js: true do
+  let(:content) { chunk_input(0).text }
 
   context 'no pages' do
     it do
