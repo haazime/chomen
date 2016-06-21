@@ -6,7 +6,7 @@ class ChunksController < ApplicationController
   end
 
   def destroy
-    chunk = Chunk.find(params[:id])
+    chunk = Chunk.find_by(gcid: params[:gcid])
     chunk.destroy_with_page
     redirect_to root_url
   end
