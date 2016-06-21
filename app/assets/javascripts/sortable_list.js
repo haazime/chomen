@@ -10,7 +10,7 @@ var setupSortable = function() {
     animation: 200,
     handle: '.sortable-handle',
     ghostClass: 'sortable-ghost',
-    onUpdate: function(e) {
+    onEnd: function(e) {
       $.ajax({
           type: 'PUT',
           url: $(e.item).data('sort-url'),
