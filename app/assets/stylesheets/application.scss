@@ -11,13 +11,11 @@ html.turbolinks-progress-bar::before {
 }
 
 body {
-  margin-top: calc(#{$navbar-height} + 3.5rem);
+  margin-top: calc(#{$navbar-height} + 2.5rem);
 }
 
 .navbar-brand {
-  font-size: 20px !important;
-  line-height: 30px !important;
-  height: 60px !important;
+  font-size: 18px !important;
 }
 
 .sortable-handle { cursor: move; }
