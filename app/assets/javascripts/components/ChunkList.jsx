@@ -1,20 +1,18 @@
 class ChunkList extends React.Component {
-  renderChunkBox(active, chunk) {
-    const isActive = active === chunk.gcid
+  renderChunkBox(chunk) {
     return (
       <ChunkBox
         key={chunk.gcid}
-        isActive={isActive}
         {...chunk}
       />
     )
   }
 
   render() {
-    const { active, chunks } = this.props
+    const { chunks } = this.props
     return (
       <div>
-        {chunks.map(c => this.renderChunkBox(active, c))}
+        {chunks.map(c => this.renderChunkBox(c))}
       </div>
     )
   }

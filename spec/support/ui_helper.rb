@@ -7,6 +7,10 @@ module UIHelper
     all('textarea')
   end
 
+  def chunk_boxes
+    all('.chunk-box')
+  end
+
   def chunk_remover(i)
     all('.chunk-remover')[i]
   end
