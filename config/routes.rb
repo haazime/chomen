@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   post    '/pages',       to: 'pages#save',     as: :pages
   get     '/pages/:gpid', to: 'pages#edit',     as: :edit_page
 
-  resources :chunks, only: [:new, :destroy]
+  get     '/chunks/new',  to: 'chunks#new',     as: :new_chunk
+  delete  '/chunk/:gcid', to: 'chunks#destroy', as: :destroy_chunk
 
   root 'pages#index'
 end
