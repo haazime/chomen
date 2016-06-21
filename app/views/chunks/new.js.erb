@@ -1,3 +1,3 @@
 $('#chunk-list-outer')
-  .replaceWith("<%=j render(partial: 'chunks/list', locals: { list: chunk_list_attributes(@page) }) %>")
+  .replaceWith("<%=j render(partial: 'chunks/list', locals: { list: chunk_list_attributes(@page, @page.chunks) }) %>")
 ReactRailsUJS.mountComponents()

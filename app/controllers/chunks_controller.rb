@@ -11,4 +11,10 @@ class ChunksController < ApplicationController
     end
     redirect_to root_url
   end
+
+  def sort
+    chunk = Chunk.find_by(gcid: params[:gcid])
+    chunk.update(row_order_position: params[:pos])
+    render nothing: true
+  end
 end

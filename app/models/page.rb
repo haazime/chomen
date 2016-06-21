@@ -33,11 +33,16 @@ class Page < ActiveRecord::Base
   end
 
   def label
-    @label ||= chunks.first&.label
+    @label ||= ordered_chunks.first&.label
   end
 
   def ordered_chunks
     return chunks unless persisted?
-    chunks.rank(:row_order)
+
+    sorter = ->(chunks) { chunks.rank(:row_order) }
+    return sorter.call(chunks) if chunks.all?(&:persisted?)
+
+    persisteds, new = chunks.partition(&:persisted?)
+    return sorter.call(chunks) + new
   end
 end

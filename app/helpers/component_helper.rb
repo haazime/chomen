@@ -1,8 +1,7 @@
 module ComponentHelper
 
-  def chunk_list_attributes(page)
-    chunks = page.ordered_chunks.map { |c| chunk_attributes(page, c) }
-    { chunks: chunks }
+  def chunk_list_attributes(page, chunks = page.ordered_chunks)
+    { chunks: chunks.map { |c| chunk_attributes(page, c) } }
   end
 
   def chunk_attributes(page, chunk)
@@ -10,6 +9,7 @@ module ComponentHelper
       gpid: page.gpid,
       save_url: pages_url,
       destroy_url: destroy_chunk_url(gcid: chunk.gcid),
+      sort_url: sort_chunk_url(gcid: chunk.gcid),
       save_delay: save_delay
     )
   end

@@ -18,12 +18,15 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require Sortable
 //= require_tree .
 
 Turbolinks.enableProgressBar();
 
-$(document).on('ready page:load', function() {
+$(document).on('ready page:update', function() {
   var appbar = document.querySelector('#appbar');
   var headroom = new Headroom(appbar)
   headroom.init()
+
+  setupSortable()
 });
