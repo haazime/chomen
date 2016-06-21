@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require headroom
 //= require react
 //= require react_ujs
 //= require components
@@ -24,9 +23,5 @@
 Turbolinks.enableProgressBar();
 
 $(document).on('ready page:update', function() {
-  var appbar = document.querySelector('#appbar');
-  var headroom = new Headroom(appbar)
-  headroom.init()
-
   setupSortable()
 });
