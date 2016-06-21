@@ -2,7 +2,7 @@ class ChunkBox extends React.Component {
   saveContent(content) {
     const { gpid, gcid, saveUrl } = this.props
     const data = {
-      gpid: gpid || '',
+      gpid: gpid,
       gcid: gcid,
       content: content
     }
