@@ -1,4 +1,4 @@
-class ChunkTextInput extends React.Component {
+class ChunkInput extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -8,9 +8,7 @@ class ChunkTextInput extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.isActive) {
-      ReactDOM.findDOMNode(this.refs.textarea).focus()
-    }
+    ReactDOM.findDOMNode(this.refs.textarea).focus()
   }
 
   handleChange(e) {
@@ -19,20 +17,19 @@ class ChunkTextInput extends React.Component {
   }
 
   saveContent() {
+    const { onSave, saveDelay } = this.props
+
     if (this.state.timeoutId) {
       clearTimeout(this.state.timeoutId)
     }
-
-    const timeoutId = setTimeout(() => {
-      this.props.onSave(this.state.value)
-    }, this.props.saveDelay)
-
+    const timeoutId = setTimeout(() => { onSave(this.state.value) }, saveDelay)
     this.setState({ timeoutId: timeoutId })
   }
 
   render() {
-    const value = this.state.value
+    const { value } = this.state
     const rows = value.split("\n").length
+
     return (
       <div className='chunk-body'>
         <textarea
