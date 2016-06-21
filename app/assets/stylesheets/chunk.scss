@@ -34,22 +34,25 @@ $padding-left: 1.5rem;
 
 $chunk-action-color: lighten($gray-nav, 7%);
 
+.chunk-handle {
+  margin-right: $padding-left;
+  color: $chunk-action-color;
+}
+
 .chunk-point {
   color: $chunk-action-color;
 }
 
+.chunk-indicator {
+  color: $brand-success;
+  font-size: 15px;
+}
+
 .chunk-remover {
   color: $chunk-action-color;
-  margin-right: 5px;
+  margin-left: auto;
 
   &:hover {
     color: $brand-danger;
   }
-}
-
-.chunk-indicator {
-  margin-left: auto;
-
-  color: $brand-success;
-  font-size: 15px;
 }

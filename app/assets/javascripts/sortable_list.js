@@ -8,6 +8,7 @@ var setupSortable = function() {
     draggable: '.sortable-item',
     scroll: true,
     animation: 200,
+    handle: '.sortable-handle',
     ghostClass: 'sortable-ghost',
     onUpdate: function(e) {
       $.ajax({
