@@ -55,3 +55,4 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'react-rails'
+gem 'ranked-model'

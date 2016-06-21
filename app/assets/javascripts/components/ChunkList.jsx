@@ -11,7 +11,7 @@ class ChunkList extends React.Component {
   render() {
     const { chunks } = this.props
     return (
-      <div>
+      <div className='sortable-list'>
         {chunks.map(c => this.renderChunkBox(c))}
       </div>
     )

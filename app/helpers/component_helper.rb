@@ -10,6 +10,7 @@ module ComponentHelper
       gpid: page.gpid,
       save_url: pages_url,
       destroy_url: destroy_chunk_url(gcid: chunk.gcid),
+      sort_url: sort_chunk_url(gcid: chunk.gcid),
       save_delay: save_delay
     )
   end

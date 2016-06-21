@@ -10,10 +10,20 @@ class ChunkBox extends React.Component {
   }
 
   render() {
-    const { gcid, content, saveDelay, destroyUrl } = this.props
+    const {
+      gcid,
+      content,
+      saveDelay,
+      destroyUrl,
+      sortUrl
+    } = this.props
 
     return (
-      <div id={gcid} className='chunk-box'>
+      <div
+        id={gcid}
+        className='chunk-box sortable-item'
+        data-sort-url={sortUrl}
+      >
         <ChunkActions destroyUrl={destroyUrl} />
         <ChunkInput
           content={content}
