@@ -38,6 +38,6 @@ class Page < ActiveRecord::Base
 
   def ordered_chunks
     return chunks unless persisted?
-    chunks.sort_by(&:created_at)
+    chunks.rank(:row_order)
   end
 end

@@ -1,4 +1,7 @@
 class Chunk < ActiveRecord::Base
+  include RankedModel
+  ranks :row_order
+
   belongs_to :page
 
   validates :content, presence: true
