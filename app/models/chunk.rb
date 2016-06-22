@@ -8,6 +8,7 @@ class Chunk < ActiveRecord::Base
   validates :content, presence: true
 
   delegate :gpid, to: :page
+  delegate :title, to: :link, prefix: true, allow_nil: true
 
   after_save do
     if title = Link.title(content)
@@ -29,9 +30,5 @@ class Chunk < ActiveRecord::Base
 
   def label
     @label ||= content.split(/\n\r|\r|\n/).first
-  end
-
-  def link?
-    link.present?
   end
 end
