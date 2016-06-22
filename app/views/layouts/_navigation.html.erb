@@ -24,8 +24,10 @@
           <% end -%>
         </li>
         <li>
-          <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder' do %>
-            <%= fa_icon('plus-circle lg') %>
+          <% if @page.present? -%>
+            <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder' do %>
+              <%= fa_icon('plus-circle lg') %>
+            <% end -%>
           <% end -%>
         </li>
       </ul>

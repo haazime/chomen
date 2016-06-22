@@ -33,7 +33,7 @@ $body-bg:               lighten(#D6BA73, 32.5%) !default;
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $brand-info !default;
+$link-color:            $brand-primary !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
@@ -783,7 +783,8 @@ $well-border:                 darken($well-bg, 7%) !default;
 $badge-color:                 #fff !default;
 //** Linked badge text color on hover
 $badge-link-hover-color:      #fff !default;
-$badge-bg:                    $link-color !default;
+//$badge-bg:                    $link-color !default;
+$badge-bg:                    lighten($link-color, 10%) !default;
 
 //** Badge text color in active nav link
 $badge-active-color:          $link-color !default;

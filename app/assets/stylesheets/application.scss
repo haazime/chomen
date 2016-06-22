@@ -19,3 +19,20 @@ body {
 }
 
 .sortable-handle { cursor: move; }
+
+.page-summary {
+  @include flex();
+}
+
+.page-label {
+  margin-right: auto;
+}
+
+.page-chunk-size {
+  margin-left: 1.0rem;
+}
+
+.page-timestamp {
+  margin-left: 1.0rem;
+  color: $gray-nav;
+}

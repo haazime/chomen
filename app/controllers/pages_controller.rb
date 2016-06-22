@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   before_action :require_page, only: [:edit]
 
   def index
+    @pages = Page.list
+  end
+
+  def show
     @page = Page.last_updated || PageFactory.new_page
     render :page
   end

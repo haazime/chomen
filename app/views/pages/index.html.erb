@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <% @pages.each do |p| %>
+    <li class="list-group-item page-summary">
+      <span class="page-label"><%= p.label %></span>
+      <span class="page-chunk-size badge"><%= p.chunks.size %></span>
+      <span class="page-timestamp"><%=l p.updated_at, format: :long %></span>
+    </li>
+  <% end -%>
+</ul>
