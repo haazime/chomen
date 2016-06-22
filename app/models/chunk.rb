@@ -3,10 +3,18 @@ class Chunk < ActiveRecord::Base
   ranks :row_order
 
   belongs_to :page
+  has_one :link, dependent: :destroy
 
   validates :content, presence: true
 
   delegate :gpid, to: :page
+  delegate :title, to: :link, prefix: true, allow_nil: true
+
+  after_save do
+    if title = Link.title(content)
+      create_link!(title: title)
+    end
+  end
 
   before_update do
     page.update!(updated_at: Time.current)
@@ -22,10 +30,5 @@ class Chunk < ActiveRecord::Base
 
   def label
     @label ||= content.split(/\n\r|\r|\n/).first
-  end
-
-  def link?
-    return false if /\s/.match(content)
-    URI.regexp.match(content)
   end
 end

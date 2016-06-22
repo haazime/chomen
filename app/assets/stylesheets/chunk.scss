@@ -29,8 +29,12 @@ $chunk-part-v-space: calc(#{$chunk-padding} + 2px);
 }
 
 .chunk-link {
+  width: 100%;
   padding-top: $chunk-part-v-space;
-  padding-right: $chunk-padding;
+  padding-left: $chunk-padding;
+  padding-bottom: $chunk-padding;
+
+  i { margin-left: 3px; }
 }
 
 .chunk-icon {
