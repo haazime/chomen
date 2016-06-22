@@ -31,4 +31,30 @@ describe Chunk do
       end
     end
   end
+
+  describe '#link?' do
+    subject do
+      Chunk.new(content: content)
+    end
+
+    context 'content start_with http://' do
+      let(:content) { 'http://example.com' }
+      it { is_expected.to be_link }
+    end
+
+    context 'content start_with https://' do
+      let(:content) { 'https://example.com' }
+      it { is_expected.to be_link }
+    end
+
+    context 'content NOT start_with http' do
+      let(:content) { 'http is protocol' }
+      it { is_expected.to_not be_link }
+    end
+
+    context 'content includes \n' do
+      let(:content) { "http://example.com\nis awesome" }
+      it { is_expected.to_not be_link }
+    end
+  end
 end
