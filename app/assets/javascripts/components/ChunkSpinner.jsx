@@ -1,3 +1,3 @@
 const ChunkSpinner = () => {
-  return <i className='fa fa-spinner fa-spin chunk-spinner' />
+  return <i className='fa fa-spinner fa-spin chunk-icon chunk-icon-success' />
 }

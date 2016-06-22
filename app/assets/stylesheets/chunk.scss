@@ -8,54 +8,34 @@
 }
 
 $chunk-padding: 1.5rem;
-$chunk-action-color: lighten($gray-nav, 7%);
-
-.chunk-handle {
-  padding-top: $chunk-padding;
-  padding-left: $chunk-padding;
-  color: $chunk-action-color;
-}
 
 .chunk-body {
   width: 100%;
   padding: 1.5rem $chunk-padding;
 
-  textarea {
-    resize: none;
-  }
+  textarea { resize: none; }
+}
+
+.chunk-handle {
+  padding-top: calc(#{$chunk-padding} + 2px);
+  padding-left: $chunk-padding;
 }
 
 .chunk-indicator {
-  padding-top: $chunk-padding;
+  padding-top: calc(#{$chunk-padding} + 2px);
   padding-right: $chunk-padding;
 }
 
-.chunk-spinner {
+.chunk-icon {
+  color: lighten($gray-nav, 7%);
+  font-size: 18px;
+}
+
+.chunk-icon-danger {
+  &:active { color: $brand-danger; }
+  &:hover { color: $brand-danger; }
+}
+
+.chunk-icon-success {
   color: $brand-success;
-  font-size: 15px;
-}
-
-.chunk-remover {
-  color: $chunk-action-color;
-
-  &:hover {
-    color: $brand-danger;
-  }
-}
-
-.chunk-actions {
-  @include flex();
-  -webkit-align-items: center;
-  align-items: center;
-
-  $vertical-space: 5px;
-  $font-size: 18px;
-  $height: $font-size + $vertical-space * 2;
-
-  padding: $vertical-space $chunk-padding;
-  border-bottom: 1px solid $border-color;
-
-  font-size: $font-size;
-  height: $height;
-  line-height: $height;
 }

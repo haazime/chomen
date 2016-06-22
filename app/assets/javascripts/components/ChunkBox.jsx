@@ -26,7 +26,6 @@ class ChunkBox extends React.Component {
 
   render() {
     const {
-      gcid,
       content,
       saveDelay,
       destroyUrl,

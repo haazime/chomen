@@ -6,7 +6,7 @@ const ChunkRemover = ({ url }) => {
       data-confirm='*DELETE this chunk* Are you sure?'
       className='chunk-remover'
     >
-      <i className='fa fa-minus-circle' />
+      <i className='fa fa-minus-circle chunk-icon chunk-icon-danger' />
     </a>
   )
 }
