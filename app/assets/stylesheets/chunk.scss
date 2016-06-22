@@ -17,10 +17,29 @@ $chunk-action-color: lighten($gray-nav, 7%);
 }
 
 .chunk-body {
+  width: 100%;
   padding: 1.5rem $chunk-padding;
 
   textarea {
     resize: none;
+  }
+}
+
+.chunk-indicator {
+  padding-top: $chunk-padding;
+  padding-right: $chunk-padding;
+}
+
+.chunk-spinner {
+  color: $brand-success;
+  font-size: 15px;
+}
+
+.chunk-remover {
+  color: $chunk-action-color;
+
+  &:hover {
+    color: $brand-danger;
   }
 }
 
@@ -39,21 +58,4 @@ $chunk-action-color: lighten($gray-nav, 7%);
   font-size: $font-size;
   height: $height;
   line-height: $height;
-}
-
-.chunk-indicator {
-  margin-left: auto;
-}
-
-.chunk-spinner {
-  color: $brand-success;
-  font-size: 15px;
-}
-
-.chunk-remover {
-  color: $chunk-action-color;
-
-  &:hover {
-    color: $brand-danger;
-  }
 }
