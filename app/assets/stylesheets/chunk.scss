@@ -1,14 +1,23 @@
 .chunk-box {
+  @include flex;
   @include box;
+
   background-color: #fff;
   padding: 0;
   margin-bottom: 2.5rem;
 }
 
-$padding-left: 1.5rem;
+$chunk-padding: 1.5rem;
+$chunk-action-color: lighten($gray-nav, 7%);
+
+.chunk-handle {
+  padding-top: $chunk-padding;
+  padding-left: $chunk-padding;
+  color: $chunk-action-color;
+}
 
 .chunk-body {
-  padding: 1.5rem $padding-left;
+  padding: 1.5rem $chunk-padding;
 
   textarea {
     resize: none;
@@ -24,19 +33,12 @@ $padding-left: 1.5rem;
   $font-size: 18px;
   $height: $font-size + $vertical-space * 2;
 
-  padding: $vertical-space $padding-left;
+  padding: $vertical-space $chunk-padding;
   border-bottom: 1px solid $border-color;
 
   font-size: $font-size;
   height: $height;
   line-height: $height;
-}
-
-$chunk-action-color: lighten($gray-nav, 7%);
-
-.chunk-handle {
-  margin-right: $padding-left;
-  color: $chunk-action-color;
 }
 
 .chunk-indicator {

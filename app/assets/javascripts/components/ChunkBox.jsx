@@ -39,14 +39,15 @@ class ChunkBox extends React.Component {
         className='chunk-box sortable-item'
         data-sort-url={sortUrl}
       >
-        <ChunkActions
-          mode={this.state.mode}
-          destroyUrl={destroyUrl}
-        />
+        <ChunkHandle />
         <ChunkInput
           content={content}
           saveDelay={saveDelay}
           onSave={this.saveContent.bind(this)}
+        />
+        <ChunkIndicator
+          mode={this.state.mode}
+          destroyUrl={destroyUrl}
         />
       </div>
     )

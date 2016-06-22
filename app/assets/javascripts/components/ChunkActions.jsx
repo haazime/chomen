@@ -3,7 +3,6 @@ class ChunkActions extends React.Component {
     const { mode, destroyUrl } = this.props
     return (
       <div className='chunk-actions'>
-        <ChunkHandle />
         <ChunkIndicator
           mode={mode}
           destroyUrl={destroyUrl}
