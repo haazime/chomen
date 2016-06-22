@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def set_pages
-      @pages = Page.sorted_by_update
+      @pages = Page.list.limit(5)
     end
 
     def require_page

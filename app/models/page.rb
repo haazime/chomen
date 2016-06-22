@@ -4,10 +4,10 @@ class Page < ActiveRecord::Base
   class << self
 
     def last_updated
-      sorted_by_update.limit(1).first
+      list.limit(1).first
     end
 
-    def sorted_by_update
+    def list
       order(updated_at: :desc)
     end
   end
