@@ -39,18 +39,17 @@ $chunk-action-color: lighten($gray-nav, 7%);
   color: $chunk-action-color;
 }
 
-.chunk-point {
-  color: $chunk-action-color;
+.chunk-indicator {
+  margin-left: auto;
 }
 
-.chunk-indicator {
+.chunk-spinner {
   color: $brand-success;
   font-size: 15px;
 }
 
 .chunk-remover {
   color: $chunk-action-color;
-  margin-left: auto;
 
   &:hover {
     color: $brand-danger;

@@ -1,4 +1,13 @@
 class ChunkBox extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { mode: 'idle' }
+  }
+
+  changeModeTo(mode) {
+    this.setState({ mode: mode })
+  }
+
   saveContent(content) {
     const { gpid, gcid, saveUrl } = this.props
     const data = {
@@ -6,7 +15,13 @@ class ChunkBox extends React.Component {
       gcid: gcid,
       content: content
     }
-    $.ajax({ type: 'POST', url: saveUrl, data: data })
+    $.ajax({
+      type: 'POST',
+      url: saveUrl,
+      data: data,
+      beforeSend: () => { this.changeModeTo('saving') },
+      success: () => { this.changeModeTo('idle') }
+    })
   }
 
   render() {
@@ -24,7 +39,10 @@ class ChunkBox extends React.Component {
         className='chunk-box sortable-item'
         data-sort-url={sortUrl}
       >
-        <ChunkActions destroyUrl={destroyUrl} />
+        <ChunkActions
+          mode={this.state.mode}
+          destroyUrl={destroyUrl}
+        />
         <ChunkInput
           content={content}
           saveDelay={saveDelay}

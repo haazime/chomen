@@ -1,10 +1,19 @@
 class ChunkIndicator extends React.Component {
+  createChild() {
+    const { mode, destroyUrl } = this.props
+    switch(mode) {
+      case 'saving':
+        return <ChunkSpinner />
+      default:
+        return <ChunkRemover url={destroyUrl} />
+    }
+  }
+
   render() {
-    const style = {display: 'none'}
     return (
-      <span style={style} className='chunk-indicator'>
-        <i className='fa fa-cloud-upload' /> Saved
-      </span>
+      <div className='chunk-indicator'>
+        {this.createChild()}
+      </div>
     )
   }
 }
