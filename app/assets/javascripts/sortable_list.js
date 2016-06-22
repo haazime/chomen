@@ -7,7 +7,7 @@ var setupSortable = function() {
   var sortableList = Sortable.create(list, {
     draggable: '.sortable-item',
     scroll: true,
-    animation: 200,
+    animation: 100,
     handle: '.sortable-handle',
     ghostClass: 'sortable-ghost',
     onEnd: function(e) {

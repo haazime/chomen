@@ -1,58 +1,41 @@
 .chunk-box {
+  @include flex;
   @include box;
+
   background-color: #fff;
   padding: 0;
   margin-bottom: 2.5rem;
 }
 
-$padding-left: 1.5rem;
+$chunk-padding: 1.5rem;
 
 .chunk-body {
-  padding: 1.5rem $padding-left;
+  width: 100%;
+  padding: 1.5rem $chunk-padding;
 
-  textarea {
-    resize: none;
-  }
+  textarea { resize: none; }
 }
-
-.chunk-actions {
-  @include flex();
-  -webkit-align-items: center;
-  align-items: center;
-
-  $vertical-space: 5px;
-  $font-size: 18px;
-  $height: $font-size + $vertical-space * 2;
-
-  padding: $vertical-space $padding-left;
-  border-bottom: 1px solid $border-color;
-
-  font-size: $font-size;
-  height: $height;
-  line-height: $height;
-}
-
-$chunk-action-color: lighten($gray-nav, 7%);
 
 .chunk-handle {
-  margin-right: $padding-left;
-  color: $chunk-action-color;
-}
-
-.chunk-point {
-  color: $chunk-action-color;
+  padding-top: calc(#{$chunk-padding} + 2px);
+  padding-left: $chunk-padding;
 }
 
 .chunk-indicator {
-  color: $brand-success;
-  font-size: 15px;
+  padding-top: calc(#{$chunk-padding} + 2px);
+  padding-right: $chunk-padding;
 }
 
-.chunk-remover {
-  color: $chunk-action-color;
-  margin-left: auto;
+.chunk-icon {
+  color: lighten($gray-nav, 7%);
+  font-size: 18px;
+}
 
-  &:hover {
-    color: $brand-danger;
-  }
+.chunk-icon-danger {
+  &:active { color: $brand-danger; }
+  &:hover { color: $brand-danger; }
+}
+
+.chunk-icon-success {
+  color: $brand-success;
 }
