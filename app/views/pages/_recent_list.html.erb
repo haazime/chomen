@@ -1,9 +1,21 @@
 <% if pages.any? -%>
   <% pages.each do |p| -%>
-    <li class="recent-page"><%= link_to p.label, edit_page_url(gpid: p.gpid) %></li>
+    <li class="recent-page">
+      <%= link_to edit_page_url(gpid: p.gpid) do %>
+        <%= fa_icon('bolt') %> <%= p.label %>
+      <% end -%>
+    </li>
   <% end -%>
   <li class="divider"></li>
-  <li><%= link_to 'Show all pages', list_page_url %></li>
+  <li>
+    <%= link_to list_page_url do %>
+      <%= fa_icon('globe') %> Show all pages
+    <% end -%>
+  </li>
 <% else -%>
-  <li><%= link_to 'No any pages.', new_page_url %></li>
+  <li>
+    <%= link_to new_page_url do %>
+      <%= fa_icon('flag-o') %> No any pages.
+    <% end -%>
+  </li>
 <% end -%>
