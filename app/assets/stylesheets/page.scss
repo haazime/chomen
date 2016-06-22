@@ -1,0 +1,17 @@
+.page-icon {
+  margin-right: 1.0rem;
+  color: darken($gray-nav, 10%);
+}
+
+.page-summary {
+  @include flex();
+}
+
+.page-label {
+  color: $text-color;
+  margin-right: auto;
+}
+
+.page-timestamp {
+  color: $gray-nav;
+}
