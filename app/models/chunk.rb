@@ -23,4 +23,9 @@ class Chunk < ActiveRecord::Base
   def label
     @label ||= content.split(/\n\r|\r|\n/).first
   end
+
+  def link?
+    return false if /\s/.match(content)
+    URI.regexp.match(content)
+  end
 end

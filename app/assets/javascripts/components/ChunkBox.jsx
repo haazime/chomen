@@ -9,7 +9,7 @@ class ChunkBox extends React.Component {
   }
 
   render() {
-    const { sortUrl, destroyUrl } = this.props
+    const { content, isLink, sortUrl, destroyUrl } = this.props
     return (
       <div
         className='chunk-box sortable-item'
@@ -20,6 +20,7 @@ class ChunkBox extends React.Component {
           {...this.props}
           onModeChange={this.handleModeChange.bind(this)}
         />
+        {isLink ? <ChunkLink url={content} /> : ''}
         <ChunkIndicator
           mode={this.state.mode}
           destroyUrl={destroyUrl}

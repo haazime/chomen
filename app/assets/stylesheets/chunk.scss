@@ -16,13 +16,20 @@ $chunk-padding: 1.5rem;
   textarea { resize: none; }
 }
 
+$chunk-part-v-space: calc(#{$chunk-padding} + 2px);
+
 .chunk-handle {
-  padding-top: calc(#{$chunk-padding} + 2px);
+  padding-top: $chunk-part-v-space;
   padding-left: $chunk-padding;
 }
 
 .chunk-indicator {
-  padding-top: calc(#{$chunk-padding} + 2px);
+  padding-top: $chunk-part-v-space;
+  padding-right: $chunk-padding;
+}
+
+.chunk-link {
+  padding-top: $chunk-part-v-space;
   padding-right: $chunk-padding;
 }
 
