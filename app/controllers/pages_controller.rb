@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :require_page, only: [:edit]
 
   def index
-    @pages = Page.list
+    @pages = Page.list.page(params[:page]).per(3)
   end
 
   def show

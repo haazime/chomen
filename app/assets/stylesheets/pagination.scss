@@ -1,0 +1,13 @@
+$pagination-bg-color: lighten($brand-primary, 7%);
+
+.pagination {
+  margin-top: 0.5rem;
+}
+
+.pagination > li > a {
+  color: $gray-nav;
+
+  &:hover {
+    background-color: $pagination-bg-color;
+  }
+}
