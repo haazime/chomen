@@ -4,6 +4,8 @@ class ChunkIndicator extends React.Component {
     switch(mode) {
       case 'saving':
         return <ChunkSpinner />
+      case 'failed':
+        return <ChunkError />
       default:
         return <ChunkRemover url={destroyUrl} />
     }

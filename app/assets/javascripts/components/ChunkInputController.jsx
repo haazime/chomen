@@ -15,7 +15,8 @@ class ChunkInputController extends React.Component {
       url: saveUrl,
       data: this.buildPayload(content),
       beforeSend: () => { onModeChange('saving') },
-      success: () => { onModeChange('idle') }
+      success: () => { onModeChange('idle') },
+      error: () => { onModeChange('failed') }
     })
   }
 
