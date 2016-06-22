@@ -1,7 +1,0 @@
-<% if pages.any? -%>
-  <% pages.each do |p| -%>
-    <li><%= link_to p.label, edit_page_url(gpid: p.gpid) %></li>
-  <% end -%>
-<% else -%>
-  <li><%= link_to 'ページはまだありません', new_page_url %></li>
-<% end -%>

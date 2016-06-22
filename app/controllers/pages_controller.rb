@@ -1,9 +1,13 @@
 class PagesController < ApplicationController
   before_action :authorize!
-  before_action :set_pages
+  before_action :set_recent_pages
   before_action :require_page, only: [:edit]
 
   def index
+    @pages = Page.list.page(params[:page]).per(15)
+  end
+
+  def show
     @page = Page.last_updated || PageFactory.new_page
     render :page
   end

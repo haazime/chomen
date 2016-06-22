@@ -4,7 +4,9 @@
 @import 'theme';
 @import 'font-awesome';
 @import 'mixins';
+@import 'pagination';
 @import 'chunk';
+@import 'page';
 
 html.turbolinks-progress-bar::before {
   background-color: $brand-success !important;

@@ -15,7 +15,7 @@
             <%= fa_icon('list-alt lg') %>
           </a>
           <ul id="page-list" class="dropdown-menu">
-            <%= render partial: 'pages/list', locals: { pages: @pages } %>
+            <%= render partial: 'pages/recent_list', locals: { pages: @recent_pages } %>
           </ul>
         </li>
         <li>
@@ -24,8 +24,10 @@
           <% end -%>
         </li>
         <li>
-          <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder' do %>
-            <%= fa_icon('plus-circle lg') %>
+          <% if @page.present? -%>
+            <%= link_to new_chunk_url(gpid: @page.gpid), remote: true, id: 'chunk-adder' do %>
+              <%= fa_icon('plus-circle lg') %>
+            <% end -%>
           <% end -%>
         </li>
       </ul>
