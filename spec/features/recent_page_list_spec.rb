@@ -1,16 +1,20 @@
 require 'rails_helper'
 
 describe 'show recent page list' do
-  context 'pages = 1' do
+  context 'pages = 5' do
     it do
       create_page('P1', 'C1', 'page a')
+      create_page('P2', 'C2', 'page b')
+      create_page('P3', 'C3', 'page c')
+      create_page('P4', 'C4', 'page d')
+      create_page('P5', 'C5', 'page e')
+
       visit root_path
-      labels = all('#page-list li').map(&:text)
-      expect(labels).to eq(['page a'])
+      expect(recent_pages.size).to eq(5)
     end
   end
 
-  context 'pages = 1' do
+  context 'pages = 6' do
     it do
       create_page('P1', 'C1', 'page a')
       create_page('P2', 'C1', 'page b')
@@ -20,8 +24,7 @@ describe 'show recent page list' do
       create_page('P6', 'C1', 'page f')
 
       visit root_path
-      labels = all('#page-list li').map(&:text)
-      expect(labels).to eq(
+      expect(recent_page_labels).to eq(
         [
           'page f',
           'page e',
@@ -32,4 +35,14 @@ describe 'show recent page list' do
       )
     end
   end
+
+  private
+
+    def recent_page_labels
+      recent_pages.map(&:text)
+    end
+
+    def recent_pages
+      all('.recent-page')
+    end
 end

@@ -1,9 +1,9 @@
-<ul class="list-group">
+<div class="list-group">
   <% @pages.each do |p| %>
-    <li class="list-group-item page-summary">
+    <%= link_to edit_page_url(gpid: p.gpid), class: 'list-group-item page-summary' do %>
+      <span class="page-icon"><%= fa_icon('sticky-note-o') %></span>
       <span class="page-label"><%= p.label %></span>
-      <span class="page-chunk-size badge"><%= p.chunks.size %></span>
       <span class="page-timestamp"><%=l p.updated_at, format: :long %></span>
-    </li>
+    <% end -%>
   <% end -%>
-</ul>
+</div>

@@ -1,6 +1,6 @@
 <% if pages.any? -%>
   <% pages.each do |p| -%>
-    <li><%= link_to p.label, edit_page_url(gpid: p.gpid) %></li>
+    <li class="recent-page"><%= link_to p.label, edit_page_url(gpid: p.gpid) %></li>
   <% end -%>
   <li class="divider"></li>
   <li><%= link_to 'Show all pages', list_page_url %></li>
