@@ -35,7 +35,6 @@ class ChunkBox extends React.Component {
 
     return (
       <div
-        id={gcid}
         className='chunk-box sortable-item'
         data-sort-url={sortUrl}
       >
