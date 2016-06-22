@@ -3,10 +3,17 @@ class Chunk < ActiveRecord::Base
   ranks :row_order
 
   belongs_to :page
+  has_one :link, dependent: :destroy
 
   validates :content, presence: true
 
   delegate :gpid, to: :page
+
+  after_save do
+    if title = Link.title(content)
+      create_link!(title: title)
+    end
+  end
 
   before_update do
     page.update!(updated_at: Time.current)
@@ -25,7 +32,6 @@ class Chunk < ActiveRecord::Base
   end
 
   def link?
-    return false if /\s/.match(content)
-    URI.regexp.match(content)
+    link.present?
   end
 end
