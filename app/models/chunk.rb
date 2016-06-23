@@ -1,8 +1,9 @@
 class Chunk < ActiveRecord::Base
   include RankedModel
-  ranks :row_order
 
   belongs_to :page
+  ranks :row_order, with_same: :page_id
+
   has_one :link, dependent: :destroy
 
   validates :content, presence: true

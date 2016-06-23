@@ -17,7 +17,6 @@
 //= require react
 //= require react_ujs
 //= require components
-//= require Sortable
 //= require_tree .
 
 Turbolinks.enableProgressBar();
