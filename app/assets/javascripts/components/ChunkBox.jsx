@@ -1,39 +1,31 @@
-class ChunkBox extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { mode: 'idle' }
-  }
+const ChunkBox = (props) => {
+  const {
+    content,
+    linkTitle,
+    mode,
+    sortUrl,
+    destroyUrl
+  } = props
 
-  handleModeChange(mode) {
-    this.setState({ mode: mode })
-  }
+  const chunkBody = () => {
+    if (linkTitle) {
+      return <ChunkLink title={linkTitle} url={content} />
+    } else {
+      return <ChunkInputController {...props} />
+    }
+  }()
 
-  render() {
-    const { content, linkTitle, sortUrl, destroyUrl } = this.props
-    const chunkBody = () => {
-      if (linkTitle) {
-        return <ChunkLink title={linkTitle} url={content} />
-      }
-        return (
-          <ChunkInputController
-            {...this.props}
-            onModeChange={this.handleModeChange.bind(this)}
-          />
-        )
-    }()
-
-    return (
-      <div
-        className='chunk-box sortable-item'
-        data-sort-url={sortUrl}
-      >
-        <ChunkHandle />
-        {chunkBody}
-        <ChunkIndicator
-          mode={this.state.mode}
-          destroyUrl={destroyUrl}
-        />
-      </div>
-    )
-  }
+  return (
+    <div
+      className='chunk-box sortable-item'
+      data-sort-url={sortUrl}
+    >
+      <ChunkHandle />
+      {chunkBody}
+      <ChunkIndicator
+        mode={mode}
+        destroyUrl={destroyUrl}
+      />
+    </div>
+  )
 }

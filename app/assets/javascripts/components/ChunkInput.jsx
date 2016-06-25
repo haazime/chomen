@@ -1,10 +1,8 @@
 class ChunkInput extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      value: this.props.content || '',
-      timeoutId: undefined,
-    }
+    const content = this.props.content || ''
+    this.state = { value: content }
   }
 
   componentDidMount() {
@@ -12,18 +10,9 @@ class ChunkInput extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ value: e.target.value })
-    this.saveContent()
-  }
-
-  saveContent() {
-    const { onSave, saveDelay } = this.props
-
-    if (this.state.timeoutId) {
-      clearTimeout(this.state.timeoutId)
-    }
-    const timeoutId = setTimeout(() => { onSave(this.state.value) }, saveDelay)
-    this.setState({ timeoutId: timeoutId })
+    const { value } = e.target
+    this.setState({ value: value })
+    this.props.onChange(value)
   }
 
   render() {
