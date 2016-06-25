@@ -1,11 +1,19 @@
 class ChunkInputController extends React.Component {
-  buildPayload(content) {
-    const { gpid, gcid } = this.props
-    return {
-      gpid: gpid,
-      gcid: gcid,
-      content: content
+  constructor(props) {
+    super(props)
+    this.state = { timeoutId: undefined }
+  }
+
+  handleChange(content) {
+    if (this.state.timeoutId) {
+      clearTimeout(this.state.timeoutId)
     }
+
+    const timeoutId = setTimeout(() => {
+      this.saveContent(content)
+    }, this.props.saveDelay)
+
+    this.setState({ timeoutId: timeoutId })
   }
 
   saveContent(content) {
@@ -20,13 +28,22 @@ class ChunkInputController extends React.Component {
     })
   }
 
+  buildPayload(content) {
+    const { gpid, gcid } = this.props
+    return {
+      gpid: gpid,
+      gcid: gcid,
+      content: content
+    }
+  }
+
   render() {
-    const { content, saveDelay } = this.props
+    const { content } = this.props
+
     return (
       <ChunkInput
         content={content}
-        saveDelay={saveDelay}
-        onSave={this.saveContent.bind(this)}
+        onChange={this.handleChange.bind(this)}
       />
     )
   }
