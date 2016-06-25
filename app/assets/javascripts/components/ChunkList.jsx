@@ -1,7 +1,7 @@
 class ChunkList extends React.Component {
   renderChunkBox(chunk) {
     return (
-      <ChunkBox
+      <ChunkModeController
         key={chunk.gcid}
         {...chunk}
       />
