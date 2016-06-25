@@ -38,11 +38,9 @@ class ChunkInputController extends React.Component {
   }
 
   render() {
-    const { content } = this.props
-
     return (
       <ChunkInput
-        content={content}
+        content={this.props.content}
         onChange={this.handleChange.bind(this)}
       />
     )
