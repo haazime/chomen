@@ -2,9 +2,17 @@
   @include flex;
   @include box;
 
-  background-color: #fff;
   padding: 0;
   margin-bottom: 2.0rem;
+}
+
+.chunk-box.idle {
+  background-color: #fff;
+  transition: background-color 0.3s ease-out 0.1s;
+}
+
+.chunk-box.saving {
+  background-color: lighten($brand-primary, 30%);
 }
 
 $chunk-padding: 1.0rem;

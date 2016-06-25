@@ -16,16 +16,13 @@ const ChunkBox = (props) => {
   }()
 
   return (
-    <div
-      className='chunk-box sortable-item'
-      data-sort-url={sortUrl}
-    >
+    <ChunkBoxContainer mode={mode} sortUrl={sortUrl}>
       <ChunkHandle />
       {chunkBody}
       <ChunkIndicator
         mode={mode}
         destroyUrl={destroyUrl}
       />
-    </div>
+    </ChunkBoxContainer>
   )
 }
