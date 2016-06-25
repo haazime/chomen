@@ -22,5 +22,9 @@
 Turbolinks.enableProgressBar();
 
 $(document).on('ready page:update', function() {
-  setupSortable()
+  var appbar = document.querySelector('#appbar');
+  var headroom = new Headroom(appbar);
+  headroom.init();
+
+  setupSortable();
 });
