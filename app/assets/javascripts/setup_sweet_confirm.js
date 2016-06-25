@@ -6,7 +6,7 @@ var setupSweetConfirm = function() {
     var $link = $(this);
 
     swal({
-      title: 'Are you sure?',
+      title: $link.data('sweet-confirm'),
       text: "You won't be able to revert this!",
       type: 'warning',
       showCancelButton: true,
@@ -14,7 +14,7 @@ var setupSweetConfirm = function() {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
     }).then(function() {
-      $.rails.handleMethod($link);
+      $link.trigger('click.rails');
     }, function(dismiss) {})
   });
 };
