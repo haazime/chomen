@@ -1,18 +1,23 @@
-.page-icon {
-  margin-right: 1.0rem;
-  color: darken($gray-nav, 10%);
-}
-
 .page-summary {
   @include flex();
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .page-label {
   color: $text-color;
   margin-right: auto;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .page-timestamp {
+  margin-right: 1.0rem;
   color: $gray-nav;
+}
+
+.page-remover {
+  color: $gray-nav;
+  font-size: 17px;
+
+  &:hover { color: $brand-danger; }
 }

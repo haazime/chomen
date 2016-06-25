@@ -1,10 +1,13 @@
 <div class="list-group">
   <% @pages.each do |p| %>
-    <%= link_to edit_page_url(gpid: p.gpid), class: 'list-group-item page-summary' do %>
-      <span class="page-icon"><%= fa_icon('circle-o') %></span>
-      <span class="page-label"><%= p.label %></span>
+    <div class="list-group-item page-summary">
+      <%= link_to p.label, edit_page_url(gpid: p.gpid), class: 'page-label' %>
       <span class="page-timestamp"><%=l p.updated_at, format: :long %></span>
-    <% end -%>
+      <%= link_to destroy_page_url(gpid: p.gpid), method: :delete, data: { confirm: '*DELETE this chunk* Are you sure?' },
+        class: 'page-remover' do %>
+        <%= fa_icon('minus-circle') %>
+      <% end -%>
+    </div>
   <% end -%>
 </div>
 <%= paginate @pages %>

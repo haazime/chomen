@@ -33,6 +33,11 @@ class PagesController < ApplicationController
     render :save
   end
 
+  def destroy
+    page.destroy
+    redirect_to pages_url
+  end
+
   private
 
     def page(gpid = params[:gpid])
