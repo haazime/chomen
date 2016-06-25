@@ -2,7 +2,7 @@
   <% pages.each do |p| -%>
     <li class="recent-page">
       <%= link_to edit_page_url(gpid: p.gpid) do %>
-        <%= fa_icon('bolt') %> <%= p.label %>
+        <%= p.label %>
       <% end -%>
     </li>
   <% end -%>
