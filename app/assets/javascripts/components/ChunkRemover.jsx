@@ -3,7 +3,7 @@ const ChunkRemover = ({ url }) => {
     <a
       href={url}
       data-method='delete'
-      data-confirm='*DELETE this chunk* Are you sure?'
+      data-sweet-confirm='*DELETE this chunk* Are you sure?'
       className='chunk-remover'
     >
       <i className='fa fa-minus-circle chunk-icon chunk-icon-danger' />

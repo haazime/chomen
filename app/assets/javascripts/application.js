@@ -22,6 +22,7 @@
 Turbolinks.enableProgressBar();
 
 $(document).on('ready page:update', function() {
+  setupSweetConfirm();
   setupHeadroom();
   setupSortable();
 });

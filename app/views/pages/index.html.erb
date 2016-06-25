@@ -3,7 +3,7 @@
     <div class="list-group-item page-summary">
       <%= link_to p.label, edit_page_url(gpid: p.gpid), class: 'page-label' %>
       <span class="page-timestamp"><%=l p.updated_at, format: :long %></span>
-      <%= link_to destroy_page_url(gpid: p.gpid), method: :delete, data: { confirm: '*DELETE this chunk* Are you sure?' },
+      <%= link_to destroy_page_url(gpid: p.gpid), method: :delete, data: { sweet_confirm: '*DELETE this chunk* Are you sure?' },
         class: 'page-remover' do %>
         <%= fa_icon('minus-circle') %>
       <% end -%>
