@@ -19,6 +19,7 @@ class PagesController < ApplicationController
 
   def edit
     @page = page
+    page.touch
     render :page
   end
 

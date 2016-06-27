@@ -20,5 +20,15 @@ describe 'Home', js: true do
       visit root_path
       expect(content).to have_content('LAST UPDATE')
     end
+
+    it do
+      page1 = create_page('PAGE1', 1, 'PAGE1')
+      page2 = create_page('PAGE2', 1, 'PAGE2')
+
+      visit edit_page_path(gpid: page1.gpid)
+
+      visit root_path
+      expect(content).to have_content('PAGE1')
+    end
   end
 end
