@@ -25,7 +25,7 @@ class Page < ActiveRecord::Base
   end
 
   def destroy_from_chunk(chunk_id)
-    if chunks(true).many?
+    if chunks.reload.many?
       chunks.destroy(chunk_id)
     else
       destroy
