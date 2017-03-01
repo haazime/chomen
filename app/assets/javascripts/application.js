@@ -19,8 +19,6 @@
 //= require components
 //= require_tree .
 
-Turbolinks.enableProgressBar();
-
 $(document).on('ready page:update', function() {
   setupSweetConfirm();
   setupHeadroom();

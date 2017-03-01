@@ -1,4 +1,4 @@
-class Link < ActiveRecord::Base
+class Link < ApplicationRecord
   class << self
     attr_writer :title_extractor
 
