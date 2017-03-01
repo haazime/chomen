@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class Page < ApplicationRecord
   has_many :chunks, dependent: :destroy
 
   class << self

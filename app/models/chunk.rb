@@ -1,4 +1,4 @@
-class Chunk < ActiveRecord::Base
+class Chunk < ApplicationRecord
   include RankedModel
 
   belongs_to :page
