@@ -19,8 +19,7 @@
 //= require components
 //= require_tree .
 
-$(document).on('ready page:update', function() {
+$(document).on('turbolinks:load turbolinks:render', function() {
   setupSweetConfirm();
-  setupHeadroom();
   setupSortable();
 });

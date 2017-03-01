@@ -15,7 +15,6 @@ html.turbolinks-progress-bar::before {
 
 body {
   $margin: 2.0rem;
-  margin-top: calc(#{$navbar-height} + #{$margin});
   margin-bottom: $margin;
 }
 
